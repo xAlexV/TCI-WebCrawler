@@ -6,7 +6,9 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class CrawlerTest {
     Crawler crawler;
@@ -33,8 +35,16 @@ public class CrawlerTest {
     }
 
     @Test
-    public void getBooks_book_from_link() throws IOException{
+    public void documentToMap_book_from_link() throws IOException{
         Document document = Jsoup.connect("http://i327618.hera.fhict.nl/details.php?id=101").get();
-        crawler.getBooks(document);
+        Map<String, String> expectedMap = new HashMap<>();
+        expectedMap.put("Category", "Books");
+        expectedMap.put("Format", "Paperback");
+        expectedMap.put("Year", "1994");
+        expectedMap.put("ISBN", "978-0201633610");
+        expectedMap.put("Authors", "Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides");
+        expectedMap.put("Genre", "Tech");
+        expectedMap.put("Publisher", "Prentice Hall");
+        Assert.assertEquals(crawler.documentToMap(document), expectedMap);
     }
 }

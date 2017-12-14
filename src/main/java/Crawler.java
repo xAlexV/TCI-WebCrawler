@@ -1,6 +1,7 @@
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+import org.jsoup.nodes.Node;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
@@ -45,18 +46,17 @@ public class Crawler {
         return documents;
     }
 
-    public String getBooks(Document document){
+    public Map<String, String> documentToMap(Document document){
         Elements table = document.select("tbody");
         Elements cells = table.select("tr");
         Map<String, String> map = new HashMap<>();
         for(Element cell : cells){
             Elements row = cell.children();
-            String key = row.attr("th")​;
-            String value = row.attr("td");​
+            String key = row.first().childNode(0).toString();
+            String value = row.last().childNode(0).toString();
             map.put(key, value);
         }
-        System.out.println(map);
-        return "";
+        return map;
     }
 
 }
