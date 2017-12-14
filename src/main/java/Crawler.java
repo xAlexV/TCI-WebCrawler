@@ -16,7 +16,7 @@ public class Crawler {
         links = new ArrayList<>();
     }
 
-    public List<Document> getHTML(String link) throws IOException, IllegalArgumentException {
+    public List<Document> getAllDocuments(String link) throws IOException, IllegalArgumentException {
         List<Document> documents = new ArrayList<>();
         if(!links.contains(link)) {
             // check if list is empty
@@ -37,7 +37,7 @@ public class Crawler {
             Elements links_found = document.select("a[href]");
             // Recursively call the method to get all data
             for(Element link_found : links_found) {
-                documents.addAll(this.getHTML(link_found.attr("abs:href")));
+                documents.addAll(this.getAllDocuments(link_found.attr("abs:href")));
             }
         }
         return documents;
