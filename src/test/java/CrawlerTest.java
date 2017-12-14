@@ -1,4 +1,5 @@
 import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
+import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.junit.Assert;
 import org.junit.Before;
@@ -31,4 +32,9 @@ public class CrawlerTest {
         Assert.assertEquals(documents.size(), 21);
     }
 
+    @Test
+    public void getBooks_book_from_link() throws IOException{
+        Document document = Jsoup.connect("http://i327618.hera.fhict.nl/details.php?id=101").get();
+        crawler.getBooks(document);
+    }
 }
