@@ -7,7 +7,9 @@ import java.io.IOException;
 import java.lang.reflect.Array;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Crawler {
     private List<String> links;
@@ -43,5 +45,18 @@ public class Crawler {
         return documents;
     }
 
+    public String getBooks(Document document){
+        Elements table = document.select("tbody");
+        Elements cells = table.select("tr");
+        Map<String, String> map = new HashMap<>();
+        for(Element cell : cells){
+            Elements row = cell.children();
+            String key = row.attr("th")​;
+            String value = row.attr("td");​
+            map.put(key, value);
+        }
+        System.out.println(map);
+        return "";
+    }
 
 }
