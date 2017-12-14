@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d47acb8e-40a5-4c95-b1d9-4210ba4db60c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/jsoup_1_11_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/TCI-WebCrawler.iml" afterPath="$PROJECT_DIR$/.idea/modules/TCI-WebCrawler.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/TCI-WebCrawler_main.iml" afterPath="$PROJECT_DIR$/.idea/modules/TCI-WebCrawler_main.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/TCI-WebCrawler_test.iml" afterPath="$PROJECT_DIR$/.idea/modules/TCI-WebCrawler_test.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Crawler.java" afterPath="$PROJECT_DIR$/src/main/java/Crawler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/CrawlerTest.java" afterPath="$PROJECT_DIR$/src/test/java/CrawlerTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -41,8 +34,8 @@
       <file leaf-file-name="Crawler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Crawler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="545">
-              <caret line="43" column="24" lean-forward="false" selection-start-line="43" selection-start-column="15" selection-end-line="43" selection-end-column="24" />
+            <state relative-caret-position="427">
+              <caret line="34" column="36" lean-forward="true" selection-start-line="34" selection-start-column="36" selection-end-line="34" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#333#334#0" expanded="true" />
@@ -365,8 +358,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/.idea/modules.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/Crawler.java" />
         <option value="$PROJECT_DIR$/src/test/java/CrawlerTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Crawler.java" />
       </list>
     </option>
   </component>
@@ -461,7 +454,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.CrawlerTest.getHTML_link_with_links_inside">
+  <component name="RunManager" selected="JUnit.CrawlerTest">
     <configuration name="CrawlerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="TCI-WebCrawler_test" />
@@ -490,6 +483,26 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="CrawlerTest" />
       <option name="METHOD_NAME" value="getHTML_link_with_links_inside" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="CrawlerTest.getHTML_not_working_link" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="TCI-WebCrawler_test" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="CrawlerTest" />
+      <option name="METHOD_NAME" value="getHTML_not_working_link" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -583,14 +596,16 @@
       <properties />
       <listeners />
     </configuration>
-    <list size="2">
+    <list size="3">
       <item index="0" class="java.lang.String" itemvalue="JUnit.CrawlerTest" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.CrawlerTest.getHTML_link_with_links_inside" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.CrawlerTest.getHTML_not_working_link" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.CrawlerTest.getHTML_link_with_links_inside" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.CrawlerTest" />
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.CrawlerTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.CrawlerTest.getHTML_not_working_link" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.CrawlerTest.getHTML_link_with_links_inside" />
       </list>
     </recent_temporary>
   </component>
@@ -609,14 +624,11 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CrawlerTest - 2017.12.14 at 13h 10m 32s.xml">
+    <history-entry file="CrawlerTest - 2017.12.14 at 13h 25m 55s.xml">
       <configuration name="CrawlerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CrawlerTest - 2017.12.14 at 13h 14m 07s.xml">
+    <history-entry file="CrawlerTest - 2017.12.14 at 13h 26m 19s.xml">
       <configuration name="CrawlerTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CrawlerTest_getHTML_link_with_links_inside - 2017.12.14 at 13h 14m 07s.xml">
-      <configuration name="CrawlerTest.getHTML_link_with_links_inside" configurationId="JUnit" />
     </history-entry>
     <history-entry file="CrawlerTest_getHTML_link_with_links_inside - 2017.12.14 at 13h 16m 12s.xml">
       <configuration name="CrawlerTest.getHTML_link_with_links_inside" configurationId="JUnit" />
@@ -639,9 +651,12 @@
     <history-entry file="CrawlerTest_getHTML_link_with_links_inside - 2017.12.14 at 13h 22m 51s.xml">
       <configuration name="CrawlerTest.getHTML_link_with_links_inside" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="CrawlerTest_getHTML_not_working_link - 2017.12.14 at 13h 25m 43s.xml">
+      <configuration name="CrawlerTest.getHTML_not_working_link" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5273000" />
+    <option name="totallyTimeSpent" value="5394000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -830,8 +845,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Crawler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="545">
-          <caret line="43" column="24" lean-forward="false" selection-start-line="43" selection-start-column="15" selection-end-line="43" selection-end-column="24" />
+        <state relative-caret-position="427">
+          <caret line="34" column="36" lean-forward="true" selection-start-line="34" selection-start-column="36" selection-end-line="34" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#333#334#0" expanded="true" />

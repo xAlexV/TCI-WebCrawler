@@ -30,7 +30,6 @@ public class Crawler {
                     return new ArrayList<>();
                 }
             }
-            System.out.println(link);
             links.add(link);
             Document document = Jsoup.connect(link).get();
             documents.add(document);
