@@ -56,7 +56,10 @@ public class Crawler {
             String value = row.last().childNode(0).toString();
             map.put(key, value);
         }
-        return map;
+        if(map.containsKey("Category")) {
+            return map;
+        }
+        return new HashMap<>();
     }
 
 }

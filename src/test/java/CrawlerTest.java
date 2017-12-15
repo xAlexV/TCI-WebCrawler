@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -46,5 +47,20 @@ public class CrawlerTest {
         expectedMap.put("Genre", "Tech");
         expectedMap.put("Publisher", "Prentice Hall");
         Assert.assertEquals(crawler.documentToMap(document), expectedMap);
+    }
+
+    @Test
+    public void getAllDocumentsFromWebsite() throws IOException {
+        List<Document> documents = crawler.getAllDocuments("http://i327618.hera.fhict.nl");
+        List<Map<String, String>> maps = new ArrayList<>();
+        for(Document doc : documents){
+            Map<String, String> mapFromDocument = crawler.documentToMap(doc);
+            if(!mapFromDocument.isEmpty()) {
+                maps.add(mapFromDocument);
+            }
+        }
+        for(Map<String, String> map : maps){
+            System.out.println(map);
+        }
     }
 }
