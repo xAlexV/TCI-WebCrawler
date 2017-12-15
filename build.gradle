@@ -13,6 +13,4 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
     //Jsoup support
     compile 'org.jsoup:jsoup:1.9.1'
-    //Test support
-    compile group: 'com.sun.xml.ws', name: 'policy', version: '2.3.1'
 }
