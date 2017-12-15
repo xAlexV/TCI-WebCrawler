@@ -55,12 +55,34 @@ public class CrawlerTest {
         List<Map<String, String>> maps = new ArrayList<>();
         for(Document doc : documents){
             Map<String, String> mapFromDocument = crawler.documentToMap(doc);
-            if(!mapFromDocument.isEmpty()) {
+            if(mapFromDocument != null) {
                 maps.add(mapFromDocument);
             }
         }
         for(Map<String, String> map : maps){
             System.out.println(map);
         }
+    }
+
+    @Test
+    public void convertMapWithBookToObject(){
+        HashMap<String, String> mapToConvert = new HashMap<>();
+        mapToConvert.put("Category", "Books");
+        mapToConvert.put("Format", "Paperback");
+        mapToConvert.put("Year", "1994");
+        mapToConvert.put("ISBN", "978-0201633610");
+        mapToConvert.put("Authors", "Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides");
+        mapToConvert.put("Genre", "Tech");
+        mapToConvert.put("Publisher", "Prentice Hall");
+        Book expectedResult = new Book("Tech", "Paperback", "1994",
+                                        new String[]{"Erich Gamma", "Richard Helm", "Ralph Johnson", "John Vlissides"},
+                                        "Prentice Hall", "978-0201633610");
+        List<Item> expectedList = new ArrayList<>();
+        expectedList.add(expectedResult);
+        List<HashMap<String, String>> maps = new ArrayList<>();
+        maps.add(mapToConvert);
+        List<Item> convertedItem = crawler.mapToItems(maps);
+        Assert.assertArrayEquals(expectedList.toArray(), convertedItem.toArray());
+        // I am tired of java can someone make it work so it checks if the object in array are the same
     }
 }
