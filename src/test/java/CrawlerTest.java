@@ -83,6 +83,5 @@ public class CrawlerTest {
         maps.add(mapToConvert);
         List<Item> convertedItem = crawler.mapToItems(maps);
         Assert.assertArrayEquals(expectedList.toArray(), convertedItem.toArray());
-        // I am tired of java can someone make it work so it checks if the object in array are the same
     }
 }

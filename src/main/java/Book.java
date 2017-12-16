@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.Arrays;
 
 public class Book extends Item {
     private String[] authors;
@@ -38,11 +39,12 @@ public class Book extends Item {
         this.isbn = isbn;
     }
 
+    @Override
     public boolean equals(Object obj){
         Book book = (Book) obj;
         boolean status = false;
         if(super.equals(obj)
-                && this.getAuthors() == book.getAuthors()
+                && Arrays.equals(this.getAuthors(), book.getAuthors())
                 && this.getPublisher() == book.getPublisher()
                 && this.getIsbn() == book.getIsbn()){
             status = true;
