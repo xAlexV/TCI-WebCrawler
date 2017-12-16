@@ -66,7 +66,7 @@ public class Crawler {
         List<Item> items = new ArrayList<>();
         for(Map<String, String> map : maps){
             if(map.get("Category") == "Books"){
-                String[] authors = map.get("Authors").split(",");
+                String[] authors = map.get("Authors").split(", ");
                 items.add(new Book(map.get("Genre"), map.get("Format"),
                                     map.get("Year"), authors,
                                     map.get("Publisher"), map.get("ISBN")));
@@ -76,7 +76,7 @@ public class Crawler {
                                     map.get("Year"), map.get("Artist")));
             }
             if(map.get("Category") == "Movies"){
-                String[] stars = map.get("Stars").split(",");
+                String[] stars = map.get("Stars").split(", ");
                 String[] writers = map.get("Writers").split(",");
                 items.add(new Movie(map.get("Genre"), map.get("Format"),
                         map.get("Year"), map.get("Director"), writers, stars));
