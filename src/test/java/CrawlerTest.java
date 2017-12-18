@@ -29,6 +29,7 @@ public class CrawlerTest {
         crawler.getAllDocuments("http://hello.world");
     }
 
+    //Number of links that should be found
     @Test
     public void getAllDocuments_link_with_links_inside() throws IOException{
         List<Document> documents = crawler.getAllDocuments("http://i327618.hera.fhict.nl");
