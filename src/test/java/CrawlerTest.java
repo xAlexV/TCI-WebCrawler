@@ -36,6 +36,7 @@ public class CrawlerTest {
         Assert.assertEquals(documents.size(), 21);
     }
 
+    //Expected output for a book
     @Test
     public void documentToMap_book_from_link() throws IOException{
         Document document = Jsoup.connect("http://i327618.hera.fhict.nl/details.php?id=101").get();
