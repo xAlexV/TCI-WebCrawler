@@ -95,4 +95,13 @@ public class CrawlerTest {
         String link = crawler.findItem("http://i327618.hera.fhict.nl", book);
         Assert.assertEquals("http://i327618.hera.fhict.nl/details.php?id=101", link);
     }
+
+    @Test
+    public void findMovie() throws IOException{
+        Movie movie = new Movie("Comedy", "Blu-ray", "1999",
+                "Mike Judge", new String[]{"William Goldman"},
+                new String[]{"Ron Livingston", "Jennifer Aniston", "David Herman", "Ajay Naidu", "Diedrich Bader", "Stephen Root"});
+        String link = crawler.findItem("http://i327618.hera.fhict.nl", movie);
+        Assert.assertEquals("http://i327618.hera.fhict.nl/details.php?id=202", link);
+    }
 }
