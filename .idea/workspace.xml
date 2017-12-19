@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d47acb8e-40a5-4c95-b1d9-4210ba4db60c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Crawler.java" afterPath="$PROJECT_DIR$/src/main/java/Crawler.java" />
-    </list>
+    <list default="true" id="d47acb8e-40a5-4c95-b1d9-4210ba4db60c" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -753,7 +751,7 @@
       <workItem from="1513249301586" duration="3000" />
       <workItem from="1513332424484" duration="874000" />
       <workItem from="1513448620291" duration="1717000" />
-      <workItem from="1513682516158" duration="663000" />
+      <workItem from="1513682516158" duration="686000" />
     </task>
     <servers />
   </component>
@@ -790,7 +788,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12084000" />
+    <option name="totallyTimeSpent" value="12107000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
