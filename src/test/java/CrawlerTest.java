@@ -93,6 +93,6 @@ public class CrawlerTest {
                               new String[]{"Erich Gamma", "Richard Helm", "Ralph Johnson", "John Vlissides"},
                              "Prentice Hall", "978-0201633610");
         String link = crawler.findItem("http://i327618.hera.fhict.nl", book);
-        Assert.assertEquals(true, true);
+        Assert.assertEquals("http://i327618.hera.fhict.nl/details.php?id=101", link);
     }
 }

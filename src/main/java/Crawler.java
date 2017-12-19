@@ -107,14 +107,35 @@ public class Crawler {
         String returnLink = "";
         if(this.checkLink(link)){
             Document document = Jsoup.connect(link).get();
-            List<Map<String, String>> maps = new ArrayList<>();
             Map<String, String> map = this.documentToMap(document);
             if(map == null){
                 // there is no object here, so look further
+                Elements links_found = document.select("a[href]");
+                for(Element link_found : links_found) {
+                    returnLink += this.findItem(link_found.attr("abs:href"), item);
+                    if(!returnLink.equals("")){
+                        return returnLink;
+                    }
+                }
             }
             else {
                 // there is object here so check if it's the
                 // same the object we are looking for
+                List<Map<String, String>> maps = new ArrayList<>();
+                maps.add(map);
+                List<Item> foundItem = this.mapToItems(maps);
+                if(item.equals(foundItem.get(0))) {
+                    return link;
+                }
+                else{
+                    Elements links_found = document.select("a[href]");
+                    for(Element link_found : links_found) {
+                        returnLink += this.findItem(link_found.attr("abs:href"), item);
+                        if(!returnLink.equals("")){
+                            return returnLink;
+                        }
+                    }
+                }
             }
         }
         return returnLink;
