@@ -38,8 +38,8 @@ public class Item {
         Item item = (Item) obj;
         boolean status = false;
         if(this.getGenre().equalsIgnoreCase(item.getGenre())
-                && this.getFormat() == item.getFormat()
-                && this.getYear() == item.getYear()){
+                && this.getFormat().equals(item.getFormat())
+                && this.getYear().equals(item.getYear())){
             status = true;
         }
         return status;
