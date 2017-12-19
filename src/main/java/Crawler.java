@@ -84,4 +84,8 @@ public class Crawler {
         }
         return items;
     }
+
+    public Item findItem(Item item){
+        return null;
+    }
 }
