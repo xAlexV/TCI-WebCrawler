@@ -14,4 +14,15 @@ public class Music extends Item {
     public void setArtist(String artist) {
         this.artist = artist;
     }
+
+    @Override
+    public boolean equals(Object obj){
+        Music music = (Music) obj;
+        boolean status = false;
+        if(super.equals(obj)
+                && this.getArtist().equals(music.getArtist())){
+            status = true;
+        }
+        return status;
+    }
 }
