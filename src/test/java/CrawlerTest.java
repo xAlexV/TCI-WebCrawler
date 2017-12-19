@@ -86,4 +86,9 @@ public class CrawlerTest {
         List<Item> convertedItem = crawler.mapToItems(maps);
         Assert.assertArrayEquals(expectedList.toArray(), convertedItem.toArray());
     }
+
+    @Test
+    public void findBook(){
+        Assert.assertEquals(true, true);
+    }
 }
