@@ -65,17 +65,17 @@ public class Crawler {
     public List<Item> mapToItems(List<Map<String, String>> maps){
         List<Item> items = new ArrayList<>();
         for(Map<String, String> map : maps){
-            if(map.get("Category") == "Books"){
+            if(map.get("Category").equals("Books")){
                 String[] authors = map.get("Authors").split(", ");
                 items.add(new Book(map.get("Genre"), map.get("Format"),
                                     map.get("Year"), authors,
                                     map.get("Publisher"), map.get("ISBN")));
             }
-            if(map.get("Category") == "Music"){
+            if(map.get("Category").equals("Music")){
                 items.add(new Music(map.get("Genre"), map.get("Format"),
                                     map.get("Year"), map.get("Artist")));
             }
-            if(map.get("Category") == "Movies"){
+            if(map.get("Category").equals("Movies")){
                 String[] stars = map.get("Stars").split(", ");
                 String[] writers = map.get("Writers").split(",");
                 items.add(new Movie(map.get("Genre"), map.get("Format"),
@@ -123,17 +123,17 @@ public class Crawler {
                 // same the object we are looking for
                 List<Map<String, String>> maps = new ArrayList<>();
                 maps.add(map);
-                List<Item> foundItem = this.mapToItems(maps);
-                if(item.equals(foundItem.get(0))) {
-                    return link;
+                List<Item> foundItems = this.mapToItems(maps);
+                if(item.getClass() == foundItems.get(0).getClass()) {
+                    if (item.equals(foundItems.get(0))) {
+                        return link;
+                    }
                 }
-                else{
-                    Elements links_found = document.select("a[href]");
-                    for(Element link_found : links_found) {
-                        returnLink += this.findItem(link_found.attr("abs:href"), item);
-                        if(!returnLink.equals("")){
-                            return returnLink;
-                        }
+                Elements links_found = document.select("a[href]");
+                for(Element link_found : links_found) {
+                    returnLink += this.findItem(link_found.attr("abs:href"), item);
+                    if (!returnLink.equals("")) {
+                        return returnLink;
                     }
                 }
             }

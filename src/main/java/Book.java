@@ -45,8 +45,8 @@ public class Book extends Item {
         boolean status = false;
         if(super.equals(obj)
                 && Arrays.equals(this.getAuthors(), book.getAuthors())
-                && this.getPublisher() == book.getPublisher()
-                && this.getIsbn() == book.getIsbn()){
+                && this.getPublisher().equals(book.getPublisher())
+                && this.getIsbn().equals(book.getIsbn())){
             status = true;
         }
         return status;
