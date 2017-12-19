@@ -4,25 +4,19 @@ pipeline {
     stage('Git') {
       steps {
         git(poll: true, url: 'https://github.com/xAlexV/TCI-WebCrawler.git', branch: 'crawler')
+        git(url: 'https://github.com/xAlexV/TCI-WebCrawler.git', branch: 'master', poll: true)
       }
     }
-    stage('Build the project') {
-      parallel {
-        stage('Build the project') {
-          steps {
-            build 'clean'
-          }
-        }
-        stage('build') {
-          steps {
-            build 'build'
-          }
-        }
-        stage('test') {
-          steps {
-            build 'test'
-          }
-        }
+    stage('Gradle tasks') {
+      steps {
+        sh 'gradle clean'
+        sh 'gradle test'
+        sh 'gradle build'
+      }
+    }
+    stage('Print message') {
+      steps {
+        echo 'Gradle build is successful'
       }
     }
   }
