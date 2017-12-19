@@ -1,13 +1,16 @@
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+import org.jsoup.nodes.Node;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
 import java.lang.reflect.Array;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Crawler {
     private List<String> links;
@@ -43,5 +46,46 @@ public class Crawler {
         return documents;
     }
 
+    public Map<String, String> documentToMap(Document document){
+        Elements table = document.select("tbody");
+        Elements cells = table.select("tr");
+        Map<String, String> map = new HashMap<>();
+        for(Element cell : cells){
+            Elements row = cell.children();
+            String key = row.first().childNode(0).toString();
+            String value = row.last().childNode(0).toString();
+            map.put(key, value);
+        }
+        if(map.containsKey("Category")) {
+            return map;
+        }
+        return null;
+    }
 
+    public List<Item> mapToItems(List<HashMap<String, String>> maps){
+        List<Item> items = new ArrayList<>();
+        for(Map<String, String> map : maps){
+            if(map.get("Category") == "Books"){
+                String[] authors = map.get("Authors").split(", ");
+                items.add(new Book(map.get("Genre"), map.get("Format"),
+                                    map.get("Year"), authors,
+                                    map.get("Publisher"), map.get("ISBN")));
+            }
+            if(map.get("Category") == "Music"){
+                items.add(new Music(map.get("Genre"), map.get("Format"),
+                                    map.get("Year"), map.get("Artist")));
+            }
+            if(map.get("Category") == "Movies"){
+                String[] stars = map.get("Stars").split(", ");
+                String[] writers = map.get("Writers").split(",");
+                items.add(new Movie(map.get("Genre"), map.get("Format"),
+                        map.get("Year"), map.get("Director"), writers, stars));
+            }
+        }
+        return items;
+    }
+
+    public Item findItem(Item item){
+        return null;
+    }
 }
