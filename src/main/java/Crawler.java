@@ -62,7 +62,7 @@ public class Crawler {
         return null;
     }
 
-    public List<Item> mapToItems(List<HashMap<String, String>> maps){
+    public List<Item> mapToItems(List<Map<String, String>> maps){
         List<Item> items = new ArrayList<>();
         for(Map<String, String> map : maps){
             if(map.get("Category") == "Books"){
@@ -85,7 +85,38 @@ public class Crawler {
         return items;
     }
 
-    public Item findItem(Item item){
-        return null;
+    public boolean checkLink(String link) throws IllegalArgumentException, IOException{
+        if(!this.links.contains(link)){
+            if(links.size() > 0) {
+                // check if the host of the link is the same as the original host given by the user
+                final URL url = new URL(link);
+                final URL urlOriginal = new URL(links.get(0));
+                final String originalHost = urlOriginal.getHost();
+                final String urlHost = url.getHost();
+                if (!url.getHost().equals(urlOriginal.getHost())){
+                    return false;
+                }
+            }
+            this.links.add(link);
+            return true;
+        }
+        return false;
+    }
+
+    public String findItem(String link, Item item) throws IOException{
+        String returnLink = "";
+        if(this.checkLink(link)){
+            Document document = Jsoup.connect(link).get();
+            List<Map<String, String>> maps = new ArrayList<>();
+            Map<String, String> map = this.documentToMap(document);
+            if(map == null){
+                // there is no object here, so look further
+            }
+            else {
+                // there is object here so check if it's the
+                // same the object we are looking for
+            }
+        }
+        return returnLink;
     }
 }

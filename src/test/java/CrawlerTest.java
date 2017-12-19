@@ -88,7 +88,11 @@ public class CrawlerTest {
     }
 
     @Test
-    public void findBook(){
-        Assert.assertEquals(true, true);
+    public void findBook() throws IOException{
+        Book book = new Book("Tech", "Paperback", "1994",
+                              new String[]{"Erich Gamma", "Richard Helm", "Ralph Johnson", "John Vlissides"},
+                             "Prentice Hall", "978-0201633610");
+        String link = crawler.findItem("http://i327618.hera.fhict.nl", book);
+        Assert.assertEquals("http://i327618.hera.fhict.nl/details.php?id=101", link);
     }
 }
