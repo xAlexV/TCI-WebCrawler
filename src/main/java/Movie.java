@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.List;
 
 public class Movie extends Item {
@@ -36,5 +37,18 @@ public class Movie extends Item {
 
     public void setStars(String[] stars) {
         this.stars = stars;
+    }
+
+    @Override
+    public boolean equals(Object obj){
+        Movie movie = (Movie) obj;
+        boolean status = false;
+        if(super.equals(obj)
+                && Arrays.equals(this.getWriters(), movie.getWriters())
+                && Arrays.equals(this.getStars(), movie.getStars())
+                && this.getDirector().equals(movie.getDirector())){
+            status = true;
+        }
+        return status;
     }
 }
