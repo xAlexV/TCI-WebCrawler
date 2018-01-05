@@ -21,18 +21,18 @@ public class CrawlerTest {
 
     @Test(expected=IllegalArgumentException.class)
     public void getAllDocuments_not_a_url() throws IOException{
-        crawler.getAllDocuments("wronglink");
+        crawler.getAllDocuments("wronglink", 0);
     }
 
     @Test(expected=IOException.class)
     public void getAllDocuments_not_working_link() throws IOException{
-        crawler.getAllDocuments("http://hello.world");
+        crawler.getAllDocuments("http://hello.world",0);
     }
 
     //Number of links that should be found
     @Test
     public void getAllDocuments_link_with_links_inside() throws IOException{
-        List<Document> documents = crawler.getAllDocuments("http://i327618.hera.fhict.nl");
+        List<Document> documents = crawler.getAllDocuments("http://i327618.hera.fhict.nl", 0);
         Assert.assertEquals(documents.size(), 21);
     }
 
@@ -53,7 +53,7 @@ public class CrawlerTest {
 
     @Test
     public void getAllDocumentsFromWebsite() throws IOException {
-        List<Document> documents = crawler.getAllDocuments("http://i327618.hera.fhict.nl");
+        List<Document> documents = crawler.getAllDocuments("http://i327618.hera.fhict.nl", 0);
         List<Map<String, String>> maps = new ArrayList<>();
         for(Document doc : documents){
             Map<String, String> mapFromDocument = crawler.documentToMap(doc);
@@ -92,7 +92,10 @@ public class CrawlerTest {
         Book book = new Book("Tech", "Paperback", "1994",
                               new String[]{"Erich Gamma", "Richard Helm", "Ralph Johnson", "John Vlissides"},
                              "Prentice Hall", "978-0201633610");
-        String link = crawler.findItem("http://i327618.hera.fhict.nl", book);
+        int count = 0;
+        int depth = 0;
+        String link = crawler.findItem("http://i327618.hera.fhict.nl", book, 0);
+        System.out.println("count " + crawler.pagesChecked + " depth " + crawler.depth);
         Assert.assertEquals("http://i327618.hera.fhict.nl/details.php?id=101", link);
     }
 
@@ -101,7 +104,7 @@ public class CrawlerTest {
         Movie movie = new Movie("Comedy", "Blu-ray", "1999",
                 "Mike Judge", new String[]{"William Goldman"},
                 new String[]{"Ron Livingston", "Jennifer Aniston", "David Herman", "Ajay Naidu", "Diedrich Bader", "Stephen Root"});
-        String link = crawler.findItem("http://i327618.hera.fhict.nl", movie);
+        String link = crawler.findItem("http://i327618.hera.fhict.nl", movie, 0);
         Assert.assertEquals("http://i327618.hera.fhict.nl/details.php?id=202", link);
     }
 
@@ -109,7 +112,12 @@ public class CrawlerTest {
     public void findMusic() throws IOException{
         Music music = new Music("Rock", "Vinyl",
                 "2015","Elvis Presley");
-        String link = crawler.findItem("http://i327618.hera.fhict.nl", music);
+        String link = crawler.findItem("http://i327618.hera.fhict.nl", music, 0);
         Assert.assertEquals("http://i327618.hera.fhict.nl/details.php?id=302", link);
+    }
+
+    @Test
+    public void createActionFindBook() throws IOException{
+
     }
 }
