@@ -105,6 +105,7 @@ public class CrawlerTest {
                 "Mike Judge", new String[]{"William Goldman"},
                 new String[]{"Ron Livingston", "Jennifer Aniston", "David Herman", "Ajay Naidu", "Diedrich Bader", "Stephen Root"});
         String link = crawler.findItem("http://i327618.hera.fhict.nl", movie, 0);
+        System.out.println("count " + crawler.pagesChecked + " depth " + crawler.depth);
         Assert.assertEquals("http://i327618.hera.fhict.nl/details.php?id=202", link);
     }
 
@@ -113,6 +114,7 @@ public class CrawlerTest {
         Music music = new Music("Rock", "Vinyl",
                 "2015","Elvis Presley");
         String link = crawler.findItem("http://i327618.hera.fhict.nl", music, 0);
+        System.out.println("count " + crawler.pagesChecked + " depth " + crawler.depth);
         Assert.assertEquals("http://i327618.hera.fhict.nl/details.php?id=302", link);
     }
 
@@ -123,6 +125,16 @@ public class CrawlerTest {
                 new String[]{"Erich Gamma", "Richard Helm", "Ralph Johnson", "John Vlissides"},
                 "Prentice Hall", "978-0201633610");
         CrawlingAction action = crawler.createActionFindItem("http://i327618.hera.fhict.nl", book);
+        Assert.assertTrue(crawler.crawlingActions.contains(action));
+    }
+
+    @Test
+    public void createActionFindMovie() throws IOException{
+
+        Movie movie = new Movie("Comedy", "Blu-ray", "1999",
+                "Mike Judge", new String[]{"William Goldman"},
+                new String[]{"Ron Livingston", "Jennifer Aniston", "David Herman", "Ajay Naidu", "Diedrich Bader", "Stephen Root"});
+        CrawlingAction action = crawler.createActionFindItem("http://i327618.hera.fhict.nl", movie);
         Assert.assertTrue(crawler.crawlingActions.contains(action));
     }
 }

@@ -16,3 +16,7 @@ dependencies {
     //mockito support
     testCompile 'org.mockito:mockito-all:1.9.5'
 }
+
+test {
+    reports.junitXml.destination = file('build/test-results/JUnit')
+}
