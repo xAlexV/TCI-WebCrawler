@@ -4,6 +4,9 @@ import org.jsoup.nodes.Document;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.runners.MockitoJUnitRunner;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -11,17 +14,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@RunWith(MockitoJUnitRunner.class)
 public class CrawlerTest {
-    Crawler crawler;
-
-    @Before
-    public void initializeCrawler(){
-        crawler = new Crawler();
-    }
+    @InjectMocks
+    Crawler crawler = new Crawler();
 
     @Test(expected=IllegalArgumentException.class)
     public void getAllDocuments_not_a_url() throws IOException{
-        crawler.getAllDocuments("wronglink", 0);
+        crawler.getAllDocuments("wrong link", 0);
     }
 
     @Test(expected=IOException.class)
@@ -33,7 +33,7 @@ public class CrawlerTest {
     @Test
     public void getAllDocuments_link_with_links_inside() throws IOException{
         List<Document> documents = crawler.getAllDocuments("http://i327618.hera.fhict.nl", 0);
-        Assert.assertEquals(documents.size(), 21);
+        Assert.assertEquals(21, documents.size());
     }
 
     //Expected output for a book
