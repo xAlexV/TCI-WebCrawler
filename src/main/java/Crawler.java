@@ -14,7 +14,7 @@ import java.util.Map;
 
 public class Crawler {
     private List<String> links;
-    private List<CrawlingAction> crawlingActions;
+    protected List<CrawlingAction> crawlingActions;
     public int pagesChecked = 0;
     public int depth = 0;
 
@@ -153,16 +153,16 @@ public class Crawler {
         return returnLink;
     }
 
-    public String createActionFindItem(String link, Item item) throws IOException {
+    public CrawlingAction createActionFindItem(String link, Item item) throws IOException {
         this.depth = 0;
         this.pagesChecked = 0;
         long startTime = System.currentTimeMillis();
-        String foundLink = this.findItem(link, item, 0);
+        //String foundLink = this.findItem(link, item, 0);
         long endTime = System.currentTimeMillis();
         CrawlingAction crawlingAction = new CrawlingAction(this.crawlingActions.size(), "DFS",
                 this.pagesChecked, (int) ((endTime - startTime) / 1000),
                 this.depth);
         this.crawlingActions.add(crawlingAction);
-        return foundLink;
+        return crawlingAction;
     }
 }

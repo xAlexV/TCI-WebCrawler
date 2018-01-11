@@ -119,5 +119,10 @@ public class CrawlerTest {
     @Test
     public void createActionFindBook() throws IOException{
 
+        Book book = new Book("Tech", "Paperback", "1994",
+                new String[]{"Erich Gamma", "Richard Helm", "Ralph Johnson", "John Vlissides"},
+                "Prentice Hall", "978-0201633610");
+        CrawlingAction action = crawler.createActionFindItem("http://i327618.hera.fhict.nl", book);
+        Assert.assertTrue(crawler.crawlingActions.contains(action));
     }
 }
