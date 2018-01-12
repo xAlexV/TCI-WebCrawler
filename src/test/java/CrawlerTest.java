@@ -1,4 +1,6 @@
 //import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
+import crawler.model.*;
+import crawler.service.*;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.junit.Assert;
@@ -26,7 +28,7 @@ public class CrawlerTest {
     private String link;
 
     @Before
-        public void setUp() {
+    public void setUp() {
         MockitoAnnotations.initMocks(this);
     }
 
@@ -124,8 +126,8 @@ public class CrawlerTest {
         mapToConvert.put("Genre", "Tech");
         mapToConvert.put("Publisher", "Prentice Hall");
         Book expectedResult = new Book("Tech", "Paperback", "1994",
-                                        new String[]{"Erich Gamma", "Richard Helm", "Ralph Johnson", "John Vlissides"},
-                                        "Prentice Hall", "978-0201633610");
+                new String[]{"Erich Gamma", "Richard Helm", "Ralph Johnson", "John Vlissides"},
+                "Prentice Hall", "978-0201633610");
         List<Item> expectedList = new ArrayList<>();
         expectedList.add(expectedResult);
         List<Map<String, String>> maps = new ArrayList<>();
@@ -137,8 +139,8 @@ public class CrawlerTest {
     @Test
     public void findBook() throws IOException{
         Book book = new Book("Tech", "Paperback", "1994",
-                              new String[]{"Erich Gamma", "Richard Helm", "Ralph Johnson", "John Vlissides"},
-                             "Prentice Hall", "978-0201633610");
+                new String[]{"Erich Gamma", "Richard Helm", "Ralph Johnson", "John Vlissides"},
+                "Prentice Hall", "978-0201633610");
         int count = 0;
         int depth = 0;
         String link = crawler.findItem("http://i327618.hera.fhict.nl", book, 0);
