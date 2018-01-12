@@ -116,6 +116,15 @@ public class CrawlerTest {
         Assert.assertEquals("http://i327618.hera.fhict.nl/details.php?id=302", link);
     }
 
+
+    @Test
+    public void findMusicFail() throws IOException{
+        Music music = new Music("Rock", "Vinyl",
+                "2012","Elvis Presley");
+        String link = crawler.findItem("http://i327618.hera.fhict.nl", music, 0);
+        Assert.assertNotEquals("http://i327618.hera.fhict.nl/details.php?id=302", link);
+    }
+
     @Test
     public void createActionFindBook() throws IOException{
 
