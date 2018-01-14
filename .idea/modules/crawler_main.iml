@@ -4,7 +4,7 @@
     <facet type="web" name="Web Gradle : crawler-1.0-SNAPSHOT.war">
       <configuration>
         <webroots>
-          <root url="file://C:\Users\padfo\IdeaProjects\WebCrawler2\src\main\webapp" relative="/" />
+          <root url="file://$MODULE_DIR$/../../src/main/webapp" relative="/" />
         </webroots>
       </configuration>
     </facet>
@@ -36,6 +36,5 @@
     <orderEntry type="library" name="Gradle: org.glassfish.hk2.external:aopalliance-repackaged:2.4.0-b06" level="project" />
     <orderEntry type="library" name="Gradle: org.javassist:javassist:3.18.1-GA" level="project" />
     <orderEntry type="library" name="Gradle: javax.inject:javax.inject:1" level="project" />
-    <orderEntry type="library" name="aopalliance-repackaged-2.5.0-b42" level="project" />
   </component>
 </module>
