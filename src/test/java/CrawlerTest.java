@@ -25,7 +25,7 @@ public class CrawlerTest {
     private String[] authors;
     private String publisher;
     private String isbn;
-    private String link;
+    private String name;
 
     @Before
     public void setUp() {
@@ -33,15 +33,15 @@ public class CrawlerTest {
     }
 
 
-    public CrawlerTest(String _genre, String _format, String _year, String[] _authors, String _publisher, String _isbn, String _link)
+    public CrawlerTest(String _genre, String _format, String _year, String[] _authors, String _publisher, String _isbn, String _name)
     {
+        this.name = _name;
         this.genre = _genre;
         this.format = _format;
         this.year = _year;
         this.authors = _authors;
         this.publisher = _publisher;
         this.isbn = _isbn;
-        this.link = _link;
     }
 
     @Parameterized.Parameters(name = "Book data")
@@ -49,11 +49,11 @@ public class CrawlerTest {
         return Arrays.asList(new Object[][]{
                 {"Tech", "Paperback", "1994",
                         new String[] {"Erich Gamma", "Richard Helm", "Ralph Johnson", "John Vlissides"},
-                        "Prentice Hall", "978-0201633610", "http://i327618.hera.fhict.nl/details.php?id=101"},
+                        "Prentice Hall", "978-0201633610", "A Design Patterns: Elements of Reusable Object-Oriented Software"},
                 {"Tech", "Audio", "2011", new String[] {"Robert C. Martin"},
-                        "Prentice Hall", "007-6092046981", "http://i327618.hera.fhict.nl/details.php?id=104"},
+                        "Prentice Hall", "007-6092046981", "The Clean Coder: A Code of Conduct for Professional Programmers"},
                 {"Tech", "Ebook", "2008", new String[] {"Robert C. Martin"}, "Prentice Hall",
-                        "978-0132350884", "http://i327618.hera.fhict.nl/details.php?id=102"}
+                        "978-0132350884", "Clean Code: A Handbook of Agile Software Craftsmanship"}
         });
     }
 
@@ -61,8 +61,8 @@ public class CrawlerTest {
     public void testBookFound() throws IOException {
         Crawler crawler = new Crawler();
         Book book = new Book(genre, format, year, authors, publisher, isbn);
-        String link = crawler.findItem("http://i327618.hera.fhict.nl", book, 0);
-        Assert.assertEquals(this.link, link);
+        Book expectedBook = (Book)crawler.findItem("http://i327618.hera.fhict.nl", this.name, 0);
+        Assert.assertEquals(book, expectedBook);
     }
 
     @InjectMocks
@@ -139,12 +139,12 @@ public class CrawlerTest {
     @Test
     public void findBook() throws IOException{
         Book book = new Book("Tech", "Paperback", "1994",
-                new String[]{"Erich Gamma", "Richard Helm", "Ralph Johnson", "John Vlissides"},
-                "Prentice Hall", "978-0201633610");
-        int count = 0;
-        int depth = 0;
-        String link = crawler.findItem("http://i327618.hera.fhict.nl", book, 0);
-        Assert.assertEquals("http://i327618.hera.fhict.nl/details.php?id=101", link);
+                new String[]{"Erich Gamma", "Richard Helm", "Ralph Johnson", "John Vlissides"},"Prentice Hall",
+                "978-0201633610");
+        Book foundBook = (Book)crawler.findItem("http://i327618.hera.fhict.nl",
+                                       "A Design Patterns: Elements of Reusable Object-Oriented Software",
+                                       0);
+        Assert.assertEquals(book, foundBook);
     }
 
     @Test
@@ -152,44 +152,28 @@ public class CrawlerTest {
         Movie movie = new Movie("Comedy", "Blu-ray", "1999",
                 "Mike Judge", new String[]{"William Goldman"},
                 new String[]{"Ron Livingston", "Jennifer Aniston", "David Herman", "Ajay Naidu", "Diedrich Bader", "Stephen Root"});
-        String link = crawler.findItem("http://i327618.hera.fhict.nl", movie, 0);
-        Assert.assertEquals("http://i327618.hera.fhict.nl/details.php?id=202", link);
+        Movie foundMovie = (Movie)crawler.findItem("http://i327618.hera.fhict.nl", "Office Space", 0);
+        Assert.assertEquals(movie, foundMovie);
     }
 
     @Test
     public void findMusic() throws IOException{
         Music music = new Music("Rock", "Vinyl",
                 "2015","Elvis Presley");
-        String link = crawler.findItem("http://i327618.hera.fhict.nl", music, 0);
-        Assert.assertEquals("http://i327618.hera.fhict.nl/details.php?id=302", link);
+        Music foundMusic = (Music)crawler.findItem("http://i327618.hera.fhict.nl", "Elvis Forever", 0);
+        Assert.assertEquals(music, foundMusic);
     }
-
 
     @Test
     public void findMusicFail() throws IOException{
-        Music music = new Music("Rock", "Vinyl",
-                "2012","Elvis Presley");
-        String link = crawler.findItem("http://i327618.hera.fhict.nl", music, 0);
-        Assert.assertNotEquals("http://i327618.hera.fhict.nl/details.php?id=302", link);
+        Music music = (Music)crawler.findItem("http://i327618.hera.fhict.nl", "Ricky Martin Forever", 0);
+        Assert.assertNotEquals(null, music);
     }
 
     @Test
-    public void createActionFindBook() throws IOException{
-
-        Book book = new Book("Tech", "Paperback", "1994",
-                new String[]{"Erich Gamma", "Richard Helm", "Ralph Johnson", "John Vlissides"},
-                "Prentice Hall", "978-0201633610");
-        CrawlingAction action = crawler.createActionFindItem("http://i327618.hera.fhict.nl", book);
-        Assert.assertTrue(crawler.crawlingActions.contains(action));
-    }
-
-    @Test
-    public void createActionFindMovie() throws IOException{
-
-        Movie movie = new Movie("Comedy", "Blu-ray", "1999",
-                "Mike Judge", new String[]{"William Goldman"},
-                new String[]{"Ron Livingston", "Jennifer Aniston", "David Herman", "Ajay Naidu", "Diedrich Bader", "Stephen Root"});
-        CrawlingAction action = crawler.createActionFindItem("http://i327618.hera.fhict.nl", movie);
-        Assert.assertTrue(crawler.crawlingActions.contains(action));
+    public void createAction() throws IOException{
+        int size = crawler.crawlingActions.size();
+        crawler.createActionFindItem("http://i327618.hera.fhict.nl", "Elvis Forever");
+        Assert.assertEquals(size + 1, crawler.crawlingActions.size());
     }
 }

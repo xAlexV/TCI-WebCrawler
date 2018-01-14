@@ -1,11 +1,13 @@
 package crawler.service;
 
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import crawler.model.CrawlingAction;
 import crawler.model.*;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.nodes.Node;
+import org.jsoup.nodes.TextNode;
 import org.jsoup.select.Elements;
 
 import javax.inject.Singleton;
@@ -134,59 +136,62 @@ public class Crawler {
         return false;
     }
 
-    public String findItem(String link, Item item, int depth) throws IOException{
+    public Item findItem(String link, String name, int depth) throws IOException{
         this.pagesChecked++;
         if(depth == this.depth){
             this.depth++;
         }
-        String returnLink = "";
         if(this.checkLink(link)){
             Document document = Jsoup.connect(link).get();
-            Map<String, String> map = this.documentToMap(document);
-            if(map == null){
+            Elements elements = document.select("h1");
+            Elements links_found = document.select("a[href]");
+            if(elements.size() < 2){
                 // there is no object here, so look further
-                Elements links_found = document.select("a[href]");
+
                 for(Element link_found : links_found) {
-                    returnLink += this.findItem(link_found.attr("abs:href"), item, depth + 1);
-                    if(!returnLink.equals("")){
-                        return returnLink;
-                    }
+                    return this.findItem(link_found.attr("abs:href"), name, depth + 1);
                 }
             }
             else {
                 // there is object here so check if it's the
                 // same the object we are looking for
-                List<Map<String, String>> maps = new ArrayList<>();
-                maps.add(map);
-                List<Item> foundItems = this.mapToItems(maps);
-                if(item.getClass() == foundItems.get(0).getClass()) {
-                    if (item.equals(foundItems.get(0))) {
-                        return link;
-                    }
+                Boolean nameIsFound = false;
+                for(Element e : elements){
+                    if(e.children().size() >= 0)
+                        for(Element child : e.children()){
+                            System.out.println((child));
+                            if(child.childNodes().size()>=0){
+                                Node text = child.childNodes().get(0);
+                                if(text.toString().equals(name)){
+                                    nameIsFound = true;
+                                }
+                            }
+                        }
                 }
-                Elements links_found = document.select("a[href]");
+                if(nameIsFound) {
+                    List<Map<String, String>> maps = new ArrayList<>();
+                    maps.add(this.documentToMap(document));
+                    return this.mapToItems(maps).get(0);
+                }
                 for(Element link_found : links_found) {
-                    returnLink += this.findItem(link_found.attr("abs:href"), item, depth + 1);
-                    if (!returnLink.equals("")) {
-                        return returnLink;
-                    }
+                    return this.findItem(link_found.attr("abs:href"), name, depth + 1);
                 }
             }
         }
-        return returnLink;
+        return null;
     }
 
-    public String createActionFindItem(String link, Item item) throws IOException {
+    public Item createActionFindItem(String link, String name) throws IOException {
         this.depth = 0;
         this.pagesChecked = 0;
         long startTime = System.currentTimeMillis();
-        String foundLink = this.findItem(link, item, 0);
+        Item Item = this.findItem(link, name, 0);
         long endTime = System.currentTimeMillis();
         CrawlingAction crawlingAction = new CrawlingAction(this.crawlingActions.size(), "DFS",
                 this.pagesChecked, (int) ((endTime - startTime) / 1000),
                 this.depth);
         this.crawlingActions.add(crawlingAction);
-        return foundLink;
+        return Item;
     }
 
     public List<Item> createActionFindAllDocuments(String link) throws IOException {
