@@ -1,5 +1,9 @@
 package crawler.model;
 
+
+/**
+ * This is a data class an instance of which contains information about a single crawling action.
+ */
 public class CrawlingAction {
     private int id;
     private String strategy;

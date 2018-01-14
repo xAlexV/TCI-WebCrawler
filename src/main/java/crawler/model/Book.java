@@ -3,6 +3,10 @@ package crawler.model;
 import java.util.List;
 import java.util.Arrays;
 
+
+/**
+ * This class inherits from the Item class and represents an item of a Book type.
+ */
 public class Book extends Item {
     private String[] authors;
     private String publisher;
@@ -41,6 +45,12 @@ public class Book extends Item {
         this.isbn = isbn;
     }
 
+
+    /**
+     * This method compares two objects of a type Item
+     * @param obj an object to be compared with
+     * @return a boolean (True or False)
+     */
     @Override
     public boolean equals(Object obj){
         Book book = (Book) obj;
