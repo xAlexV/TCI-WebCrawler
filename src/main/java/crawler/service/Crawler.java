@@ -8,6 +8,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.nodes.Node;
 import org.jsoup.nodes.TextNode;
+import org.jsoup.select.Elements;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -73,8 +74,7 @@ public class Crawler {
     @GET
     @Path("{name}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Item getSpecificItem(@PathParam("name") String name)
-    {
+    public Item getSpecificItem(@PathParam("name") String name) throws IOException {
         return findItem("http://i327618.hera.fhict.nl/", name, 0);
     }
 

@@ -10,7 +10,7 @@
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/build/libs/exploded/crawler-1.0-SNAPSHOT.war/META-INF/MANIFEST.MF" />
       </element>
-      <element id="javaee-facet-resources" facet="crawler_main/web/Web Gradle : crawler-1.0-SNAPSHOT.war" />
+      <element id="javaee-facet-resources" facet="crawler_main/web/Gradle : TCI : crawler-1.0-SNAPSHOT.war" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="crawler_main" />
