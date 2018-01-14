@@ -46,5 +46,10 @@ public class Item {
         }
         return status;
     }
+
+    @Override
+    public int hashCode(){
+        return 0;
+    }
 }
 
