@@ -144,7 +144,6 @@ public class CrawlerTest {
         int count = 0;
         int depth = 0;
         String link = crawler.findItem("http://i327618.hera.fhict.nl", book, 0);
-        System.out.println("count " + crawler.pagesChecked + " depth " + crawler.depth);
         Assert.assertEquals("http://i327618.hera.fhict.nl/details.php?id=101", link);
     }
 
@@ -154,7 +153,6 @@ public class CrawlerTest {
                 "Mike Judge", new String[]{"William Goldman"},
                 new String[]{"Ron Livingston", "Jennifer Aniston", "David Herman", "Ajay Naidu", "Diedrich Bader", "Stephen Root"});
         String link = crawler.findItem("http://i327618.hera.fhict.nl", movie, 0);
-        System.out.println("count " + crawler.pagesChecked + " depth " + crawler.depth);
         Assert.assertEquals("http://i327618.hera.fhict.nl/details.php?id=202", link);
     }
 
@@ -163,7 +161,6 @@ public class CrawlerTest {
         Music music = new Music("Rock", "Vinyl",
                 "2015","Elvis Presley");
         String link = crawler.findItem("http://i327618.hera.fhict.nl", music, 0);
-        System.out.println("count " + crawler.pagesChecked + " depth " + crawler.depth);
         Assert.assertEquals("http://i327618.hera.fhict.nl/details.php?id=302", link);
     }
 
