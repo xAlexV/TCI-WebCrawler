@@ -8,6 +8,11 @@ import org.jsoup.nodes.Element;
 import org.jsoup.nodes.Node;
 import org.jsoup.select.Elements;
 
+import javax.inject.Singleton;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
 import java.io.IOException;
 import java.lang.reflect.Array;
 import java.net.URL;
@@ -16,6 +21,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@Path("crawler")
+@Singleton
 public class Crawler {
     private List<String> links;
     public List<CrawlingAction> crawlingActions;
@@ -58,6 +65,21 @@ public class Crawler {
         return documents;
     }
 
+    @GET
+    @Path("all")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Document> crawlWebsite() throws IOException {
+        List<Document> documents = getAllDocuments("http://i327618.hera.fhict.nl/", 0);
+        return documents;
+    }
+
+    @GET
+    @Path("hi")
+    @Produces(MediaType.TEXT_PLAIN)
+    public String trythis() {
+        return "hi!";
+    }
+
     public Map<String, String> documentToMap(Document document){
         Elements table = document.select("tbody");
         Elements cells = table.select("tr");
@@ -66,7 +88,7 @@ public class Crawler {
             Elements row = cell.children();
             String key = row.first().childNode(0).toString();
             String value = row.last().childNode(0).toString();
-            map.put(key, value);
+             map.put(key, value);
         }
         if(map.containsKey("Category")) {
             return map;
