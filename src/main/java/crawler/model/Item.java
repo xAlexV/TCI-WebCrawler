@@ -1,5 +1,9 @@
 package crawler.model;
 
+/**
+ * This is a data class. An instance of this class contains information about an item
+ * that can be found on the website
+ */
 public class Item {
     private String genre;
     private String format;
@@ -35,6 +39,11 @@ public class Item {
         this.year = year;
     }
 
+    /**
+     * This method compares two objects of a type Item
+     * @param obj an object to be compared with
+     * @return a boolean (True or False)
+     */
     @Override
     public boolean equals(Object obj){
         Item item = (Item) obj;

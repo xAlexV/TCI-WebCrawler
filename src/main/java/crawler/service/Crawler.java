@@ -19,8 +19,19 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.*;
 
+/**
+ * The crawler program implements and REST API service that provides
+ * 3 functionalities:
+ * crawl the whole website
+ * find a specific item on the website
+ * show data about a specific crawling action
+ * <p></p>
+ * @author Alexandru Vinerean
+ * @author Daria Mikhailovskaia
+ * @author Dmytro Bunin
+ * @since 2017-12-05
+ */
 @Path("crawler")
-
 public class Crawler {
     private List<String> links;
     public List<CrawlingAction> crawlingActions;
@@ -32,6 +43,14 @@ public class Crawler {
         crawlingActions = new ArrayList<>();
     }
 
+    /**
+     * This is the method to crawl the whole website. This method finds all the items that the website contains
+     * @param link the link to the website
+     * @param depth the depth where the search starts (usually 0)
+     * @return a list of Document objects
+     * @throws IOException
+     * @throws IllegalArgumentException
+     */
     public List<Document> getAllDocuments(String link, int depth) throws IOException, IllegalArgumentException {
         this.pagesChecked++;
         if (this.depth == depth) {
@@ -63,30 +82,52 @@ public class Crawler {
         return documents;
     }
 
+    /**
+     * This is a GET method that uses the createActionFindAllDocuments function and returns the result in a json format
+     * @return a list of Document objects
+     * @throws IOException
+     */
     @GET
     @Path("all")
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Document> crawlWebsite() throws IOException {
-        List<Document> documents = getAllDocuments("http://i327618.hera.fhict.nl/", 0);
-        return documents;
+    public List<Item> crawlWebsite() throws IOException {
+        return createActionFindAllDocuments("http://i327618.hera.fhict.nl/");
     }
 
+    /**
+     * This is a GET method that uses the createActionFindItem method and returns the result in a json format
+     * @param name the name of the searched item
+     * @return an object of an Item type
+     * @throws IOException
+     */
     @GET
     @Path("{name}")
     @Produces(MediaType.APPLICATION_JSON)
     public Item getSpecificItem(@PathParam("name") String name) throws IOException {
-        return findItem("http://i327618.hera.fhict.nl/", name, 0);
+        return createActionFindItem("http://i327618.hera.fhict.nl/", name);
     }
 
 
+    /**
+     * This is a GET method that uses the createCrawlingAction method and returns the result in a json format
+     * @param id an id of the searched CrawlingAction
+     * @return an object of type CrawlingAction
+     */
     @GET
     @Path("{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public CrawlingAction getCrawlingInfo(@PathParam("id") int id) {
-        return getCrawlingInfo(id);
+    public CrawlingAction getCrawlingInfo(@PathParam("id") int id)
+    {
+        return getCrawlerAction(id);
     }
 
-    public Map<String, String> documentToMap(Document document) {
+
+    /**
+     * This method puts a Document object into a Map object
+     * @param document a Document object
+     * @return a Map object
+     */
+    public Map<String, String> documentToMap(Document document){
         Elements table = document.select("tbody");
         Elements cells = table.select("tr");
         Map<String, String> map = new HashMap<>();
@@ -102,7 +143,12 @@ public class Crawler {
         return null;
     }
 
-    public List<Item> mapToItems(List<Map<String, String>> maps) {
+    /**
+     * This method creates Items from Maps
+     * @param maps a List of Map objects
+     * @return a list of Item objects
+     */
+    public List<Item> mapToItems(List<Map<String, String>> maps){
         List<Item> items = new ArrayList<>();
         for (Map<String, String> map : maps) {
             if (map.get("Category").equals("Books")) {
@@ -125,9 +171,16 @@ public class Crawler {
         return items;
     }
 
-    public boolean checkLink(String link) throws IllegalArgumentException, IOException {
-        if (!this.links.contains(link)) {
-            if (links.size() > 0) {
+    /**
+     * This method checks if the given link is valid
+     * @param link a link to the website
+     * @return a boolean (True or False)
+     * @throws IllegalArgumentException
+     * @throws IOException
+     */
+    public boolean checkLink(String link) throws IllegalArgumentException, IOException{
+        if(!this.links.contains(link)){
+            if(links.size() > 0) {
                 // check if the host of the link is the same as the original host given by the user
                 final URL url = new URL(link);
                 final URL urlOriginal = new URL(links.get(0));
@@ -143,7 +196,15 @@ public class Crawler {
         return false;
     }
 
-    public Item findItem(String link, String name, int depth) throws IOException {
+    /**
+     * This method crawls the website in order to find a specific item.
+     * @param link a link to the website
+     * @param name the name of the searched item
+     * @param depth the depth where the search starts (usually 0)
+     * @return an object of a type Item
+     * @throws IOException
+     */
+    public Item findItem(String link, String name, int depth) throws IOException{
         Item foundItem = null;
         this.pagesChecked++;
         if (depth == this.depth) {
@@ -194,6 +255,13 @@ public class Crawler {
         return foundItem;
     }
 
+    /**
+     * This method creates an action to find an item
+     * @param link a link to the website
+     * @param name a name of the searched item
+     * @return an object of a type Item
+     * @throws IOException
+     */
     public Item createActionFindItem(String link, String name) throws IOException {
         this.depth = 0;
         this.pagesChecked = 0;
@@ -207,6 +275,13 @@ public class Crawler {
         return Item;
     }
 
+
+    /**
+     * This method creates an action to crawl the whole website
+     * @param link a link to the website
+     * @return a list of Item objects
+     * @throws IOException
+     */
     public List<Item> createActionFindAllDocuments(String link) throws IOException {
         this.depth = 0;
         this.pagesChecked = 0;
@@ -228,9 +303,14 @@ public class Crawler {
         return items; // Serialize this to json
     }
 
-    public CrawlingAction getCrawlerAction(int ID) {
-        for (CrawlingAction ca : this.crawlingActions) {
-            if (ca.getId() == ID) {
+    /**
+     * This method finds a specific CrawlingAction in the list of CrawlingAction objects based on its id
+     * @param ID an id of the searched CrawlingAction
+     * @return an object of type CrawlingAction
+     */
+    public CrawlingAction getCrawlerAction(int ID){
+        for(CrawlingAction ca : this.crawlingActions){
+            if(ca.getId() == ID){
                 return ca;
             }
         }

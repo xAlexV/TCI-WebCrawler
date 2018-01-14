@@ -3,6 +3,10 @@ package crawler.model;
 import java.util.Arrays;
 import java.util.List;
 
+
+/**
+ * This class inherits from the Item class and represents an item of a Movie type.
+ */
 public class Movie extends Item {
     private String director;
     private String[] writers;
@@ -41,6 +45,11 @@ public class Movie extends Item {
         this.stars = stars;
     }
 
+    /**
+     * This method compares two objects of a type Item
+     * @param obj an object to be compared with
+     * @return a boolean (True or False)
+     */
     @Override
     public boolean equals(Object obj){
         Movie movie = (Movie) obj;
