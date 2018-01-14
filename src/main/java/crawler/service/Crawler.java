@@ -8,6 +8,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.nodes.Node;
 import org.jsoup.nodes.TextNode;
+import org.jsoup.select.Elements;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -73,7 +74,7 @@ public class Crawler {
     @GET
     @Path("{name}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Item getSpecificItem(@PathParam("name") String name)
+    public Item getSpecificItem(@PathParam("name") String name) throws IOException
     {
         return findItem("http://i327618.hera.fhict.nl/", name, 0);
     }
@@ -145,6 +146,7 @@ public class Crawler {
     }
 
     public Item findItem(String link, String name, int depth) throws IOException{
+        Item foundItem = null;
         this.pagesChecked++;
         if(depth == this.depth){
             this.depth++;
@@ -157,7 +159,10 @@ public class Crawler {
                 // there is no object here, so look further
 
                 for(Element link_found : links_found) {
-                    return this.findItem(link_found.attr("abs:href"), name, depth + 1);
+                    Item newFoundItem = this.findItem(link_found.attr("abs:href"), name, depth + 1);
+                    if(newFoundItem != null){
+                        return newFoundItem;
+                    }
                 }
             }
             else {
@@ -165,14 +170,14 @@ public class Crawler {
                 // same the object we are looking for
                 Boolean nameIsFound = false;
                 for(Element e : elements){
-                    if(e.children().size() >= 0)
-                        for(Element child : e.children()){
-                            System.out.println((child));
-                            if(child.childNodes().size()>=0){
-                                Node text = child.childNodes().get(0);
-                                if(text.toString().equals(name)){
+                    if(nameIsFound){
+                        break;
+                    }
+                    if(e.childNodes().size() > 0)
+                        for(Node child : e.childNodes()){
+                            if(child.toString().equals(name)){
                                     nameIsFound = true;
-                                }
+                                    break;
                             }
                         }
                 }
@@ -182,11 +187,14 @@ public class Crawler {
                     return this.mapToItems(maps).get(0);
                 }
                 for(Element link_found : links_found) {
-                    return this.findItem(link_found.attr("abs:href"), name, depth + 1);
+                    Item newFoundItem = this.findItem(link_found.attr("abs:href"), name, depth + 1);
+                    if(newFoundItem != null){
+                        foundItem = newFoundItem;
+                    }
                 }
             }
         }
-        return null;
+        return foundItem;
     }
 
     public Item createActionFindItem(String link, String name) throws IOException {
