@@ -16,10 +16,7 @@ import javax.ws.rs.core.MediaType;
 import java.io.IOException;
 import java.lang.reflect.Array;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Path("crawler")
 @Singleton
@@ -179,17 +176,44 @@ public class Crawler {
         return returnLink;
     }
 
-    public CrawlingAction createActionFindItem(String link, Item item) throws IOException {
+    public String createActionFindItem(String link, Item item) throws IOException {
         this.depth = 0;
         this.pagesChecked = 0;
         long startTime = System.currentTimeMillis();
-        //String foundLink = this.findItem(link, item, 0);
+        String foundLink = this.findItem(link, item, 0);
         long endTime = System.currentTimeMillis();
         CrawlingAction crawlingAction = new CrawlingAction(this.crawlingActions.size(), "DFS",
                 this.pagesChecked, (int) ((endTime - startTime) / 1000),
                 this.depth);
         this.crawlingActions.add(crawlingAction);
-        return crawlingAction;
+        return foundLink;
+    }
+
+    public List<Item> createActionFindAllDocuments(String link) throws IOException {
+        this.depth = 0;
+        this.pagesChecked = 0;
+        long startTime = System.currentTimeMillis();
+        List<Document> documents = this.getAllDocuments(link, 0);
+        long endTime = System.currentTimeMillis();
+        CrawlingAction crawlingAction = new CrawlingAction(this.crawlingActions.size(), "DFS",
+                this.pagesChecked, (int) ((endTime - startTime) / 1000),
+                this.depth);
+        this.crawlingActions.add(crawlingAction);
+        List<Map<String, String>> maps = new ArrayList<>();
+        for(Document d : documents){
+            maps.add(this.documentToMap(d));
+        }
+        List<Item> items = this.mapToItems(maps);
+        return items; // Serialize this to json
+    }
+
+    public CrawlingAction getCrawlerAction(int ID){
+        for(CrawlingAction ca : this.crawlingActions){
+            if(ca.getId() == ID){
+                return ca;
+            }
+        }
+        return null;
     }
 }
 
