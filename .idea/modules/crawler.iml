@@ -9,6 +9,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="jersey libraries" level="project" />
     <orderEntry type="library" name="aopalliance-repackaged-2.5.0-b42" level="project" />
   </component>
 </module>

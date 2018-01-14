@@ -5,16 +5,15 @@ import crawler.model.*;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
-import org.jsoup.nodes.Node;
+
 import org.jsoup.select.Elements;
 
-import javax.inject.Singleton;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -22,7 +21,7 @@ import java.util.List;
 import java.util.Map;
 
 @Path("crawler")
-@Singleton
+
 public class Crawler {
     private List<String> links;
     public List<CrawlingAction> crawlingActions;
@@ -74,10 +73,20 @@ public class Crawler {
     }
 
     @GET
-    @Path("hi")
-    @Produces(MediaType.TEXT_PLAIN)
-    public String trythis() {
-        return "hi!";
+    @Path("{name}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Item getSpecificItem(@PathParam("name") String name)
+    {
+        return findItem("http://i327618.hera.fhict.nl/", name, 0);
+    }
+
+
+    @GET
+    @Path("{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public CrawlingAction getCrawlingInfo(@PathParam("id") int id)
+    {
+        return getCrawlingInfo(id);
     }
 
     public Map<String, String> documentToMap(Document document){
@@ -190,6 +199,17 @@ public class Crawler {
                 this.depth);
         this.crawlingActions.add(crawlingAction);
         return crawlingAction;
+    }
+
+    private CrawlingAction findCrawlingAction(int id)
+    {
+        for (CrawlingAction action : crawlingActions
+             ) {
+            if (action.getId() == id)
+                return action;
+
+        }
+        return null;
     }
 }
 
