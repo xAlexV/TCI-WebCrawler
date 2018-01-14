@@ -74,8 +74,12 @@ public class Crawler {
     @GET
     @Path("{name}")
     @Produces(MediaType.APPLICATION_JSON)
+<<<<<<< HEAD
     public Item getSpecificItem(@PathParam("name") String name) throws IOException
     {
+=======
+    public Item getSpecificItem(@PathParam("name") String name) throws IOException {
+>>>>>>> origin/crawler
         return findItem("http://i327618.hera.fhict.nl/", name, 0);
     }
 
