@@ -59,9 +59,9 @@ public class CrawlerTest {
 
     @Test
     public void testBookFound() throws IOException {
-        Crawler crawler = new Crawler();
+        Crawler cr = new Crawler();
         Book book = new Book(genre, format, year, authors, publisher, isbn);
-        Book expectedBook = (Book)crawler.findItem("http://i327618.hera.fhict.nl", this.name, 0);
+        Book expectedBook = (Book)cr.findItem("http://i327618.hera.fhict.nl", this.name, 0);
         Assert.assertEquals(book, expectedBook);
     }
 
