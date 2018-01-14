@@ -7,14 +7,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="278cb8d2-164b-4a2a-8c9c-a0afe15a6d61" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hs_err_pid8858.log" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hs_err_pid8864.log" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hs_err_pid8869.log" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hs_err_pid8913.log" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hs_err_pid8995.log" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hs_err_pid9116.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/crawler/service/Crawler.class" afterPath="$PROJECT_DIR$/out/production/classes/crawler/service/Crawler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/crawler/model/Book.java" afterPath="$PROJECT_DIR$/src/main/java/crawler/model/Book.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/crawler/model/CrawlingAction.java" afterPath="$PROJECT_DIR$/src/main/java/crawler/model/CrawlingAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/crawler/model/Item.java" afterPath="$PROJECT_DIR$/src/main/java/crawler/model/Item.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/crawler/model/Movie.java" afterPath="$PROJECT_DIR$/src/main/java/crawler/model/Movie.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/crawler/model/Music.java" afterPath="$PROJECT_DIR$/src/main/java/crawler/model/Music.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/classes/CrawlerTest.class" afterPath="$PROJECT_DIR$/out/test/classes/CrawlerTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/crawler/service/Crawler.java" afterPath="$PROJECT_DIR$/src/main/java/crawler/service/Crawler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/CrawlerTest.java" afterPath="$PROJECT_DIR$/src/test/java/CrawlerTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -50,6 +52,8 @@
               <caret line="146" column="0" lean-forward="false" selection-start-line="146" selection-start-column="0" selection-end-line="146" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <marker date="1515963583923" expanded="true" signature="6715:6727" ph="{...}" />
+                <marker date="1515963583923" expanded="true" signature="6788:7004" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -59,7 +63,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/crawler/model/Book.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="399">
-              <caret line="52" column="7" lean-forward="true" selection-start-line="48" selection-start-column="4" selection-end-line="52" selection-end-column="7" />
+              <caret line="52" column="7" lean-forward="false" selection-start-line="48" selection-start-column="4" selection-end-line="52" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -70,8 +74,8 @@
       <file leaf-file-name="Crawler.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/crawler/service/Crawler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1638">
-              <caret line="27" column="6" lean-forward="false" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
+            <state relative-caret-position="1932">
+              <caret line="95" column="0" lean-forward="false" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#4126#4127#0" expanded="true" />
@@ -85,7 +89,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/crawler/model/Music.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="63">
-              <caret line="3" column="82" lean-forward="true" selection-start-line="3" selection-start-column="82" selection-end-line="3" selection-end-column="82" />
+              <caret line="3" column="82" lean-forward="false" selection-start-line="3" selection-start-column="82" selection-end-line="3" selection-end-column="82" />
               <folding />
             </state>
           </provider>
@@ -95,7 +99,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/crawler/model/Item.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="441">
-              <caret line="45" column="7" lean-forward="true" selection-start-line="41" selection-start-column="4" selection-end-line="45" selection-end-column="7" />
+              <caret line="45" column="7" lean-forward="false" selection-start-line="41" selection-start-column="4" selection-end-line="45" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -105,7 +109,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/crawler/model/Movie.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
-              <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="8" selection-end-column="3" />
+              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="8" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -654,7 +658,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.CrawlerTest">
+  <component name="RunManager" selected="Groovy.build">
     <configuration name="CrawlerTest" type="JUnit" factoryName="JUnit" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="crawler_test" />
@@ -938,12 +942,12 @@
     <history-entry file="CrawlerTest - 2018.01.14 at 21h 16m 58s.xml">
       <configuration name="CrawlerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CrawlerTest_testBookFound - 2018.01.14 at 20h 49m 19s.xml">
-      <configuration name="CrawlerTest.testBookFound" configurationId="JUnit" />
+    <history-entry file="CrawlerTest - 2018.01.14 at 22h 02m 04s.xml">
+      <configuration name="CrawlerTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21226000" />
+    <option name="totallyTimeSpent" value="21428000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -959,7 +963,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15899123" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2236842" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1136,6 +1140,8 @@
           <caret line="73" column="5" lean-forward="false" selection-start-line="73" selection-start-column="5" selection-end-line="73" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
+            <marker date="1515963583923" expanded="true" signature="6715:6727" ph="{...}" />
+            <marker date="1515963583923" expanded="true" signature="6788:7004" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1218,6 +1224,8 @@
           <caret line="73" column="5" lean-forward="false" selection-start-line="73" selection-start-column="5" selection-end-line="73" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
+            <marker date="1515963583923" expanded="true" signature="6715:6727" ph="{...}" />
+            <marker date="1515963583923" expanded="true" signature="6788:7004" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1408,6 +1416,8 @@
           <caret line="146" column="0" lean-forward="false" selection-start-line="146" selection-start-column="0" selection-end-line="146" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <marker date="1515963583923" expanded="true" signature="6715:6727" ph="{...}" />
+            <marker date="1515963583923" expanded="true" signature="6788:7004" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1433,7 +1443,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/crawler/model/Item.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="441">
-          <caret line="45" column="7" lean-forward="true" selection-start-line="41" selection-start-column="4" selection-end-line="45" selection-end-column="7" />
+          <caret line="45" column="7" lean-forward="false" selection-start-line="41" selection-start-column="4" selection-end-line="45" selection-end-column="7" />
           <folding />
         </state>
       </provider>
@@ -1441,7 +1451,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/crawler/model/Book.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
-          <caret line="52" column="7" lean-forward="true" selection-start-line="48" selection-start-column="4" selection-end-line="52" selection-end-column="7" />
+          <caret line="52" column="7" lean-forward="false" selection-start-line="48" selection-start-column="4" selection-end-line="52" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1451,7 +1461,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/crawler/model/Movie.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
-          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="8" selection-end-column="3" />
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="8" selection-end-column="3" />
           <folding />
         </state>
       </provider>
@@ -1459,7 +1469,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/crawler/model/Music.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="63">
-          <caret line="3" column="82" lean-forward="true" selection-start-line="3" selection-start-column="82" selection-end-line="3" selection-end-column="82" />
+          <caret line="3" column="82" lean-forward="false" selection-start-line="3" selection-start-column="82" selection-end-line="3" selection-end-column="82" />
           <folding />
         </state>
       </provider>
@@ -1474,8 +1484,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/crawler/service/Crawler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1638">
-          <caret line="27" column="6" lean-forward="false" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
+        <state relative-caret-position="1932">
+          <caret line="95" column="0" lean-forward="false" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#4126#4127#0" expanded="true" />
