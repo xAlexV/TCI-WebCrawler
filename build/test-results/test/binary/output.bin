@@ -1,0 +1,46 @@
+count 64 depth 11
+	count 123 depth 13
+
+count 74 depth 11
+U{Artist=Ludwig van Beethoven, Category=Music, Format=CD, Year=2012, Genre=Clasical}
+{Category=Books, Format=Ebook, Year=2008, ISBN=978-0132350884, Authors=Robert C. Martin, Genre=Tech, Publisher=Prentice Hall}
+{Category=Books, Format=Audio, Year=2011, ISBN=007-6092046981, Authors=Robert C. Martin, Genre=Tech, Publisher=Prentice Hall}
+«{Category=Books, Format=Paperback, Year=1994, ISBN=978-0201633610, Authors=Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides, Genre=Tech, Publisher=Prentice Hall}
+M{Artist=Elvis Presley, Category=Music, Format=Vinyl, Year=2015, Genre=Rock}
+½{Category=Movies, Format=DVD, Year=1994, Writers=Winston Groom, Eric Roth, Stars=Tom Hanks, Rebecca Williams, Sally Field, Michael Conner Humphreys, Director=Robert Zemeckis, Genre=Drama}
+÷{Category=Movies, Format=Blu-ray, Year=2001, Writers=J.R.R. Tolkien, Fran Walsh, Philippa Boyens, Peter Jackson, Stars=Ron Livingston, Jennifer Aniston, David Herman, Ajay Naidu, Diedrich Bader, Stephen Root, Director=Peter Jackson, Genre=Drama}
+R{Artist=Garth Brooks, Category=Music, Format=Cassette, Year=1990, Genre=Country}
+Ê{Category=Movies, Format=Blu-ray, Year=1999, Writers=William Goldman, Stars=Ron Livingston, Jennifer Aniston, David Herman, Ajay Naidu, Diedrich Bader, Stephen Root, Director=Mike Judge, Genre=Comedy}
+„{Category=Movies, Format=DVD, Year=1987, Writers=William Goldman, Stars=Cary Elwes, Mandy Patinkin, Robin Wright, Chris Sarandon, Christopher Guest, Wallace Shawn, AndrÃƒÂ© the Giant, Fred Savage, Peter Falk, Billy Crystal, Director=Rob Reiner, Genre=Comedy}
+Â{Category=Books, Format=Hardcover, Year=1999, ISBN=978-0201485677, Authors=Martin Fowler, Kent Beck, John Brant, William Opdyke, Don Roberts, Genre=Tech, Publisher=Addison-Wesley Professional}
+J{Artist=Nat King Cole, Category=Music, Format=MP3, Year=2008, Genre=Jaz}
+count 64 depth 11
+count 123 depth 13
+count 74 depth 11
+U{Artist=Ludwig van Beethoven, Category=Music, Format=CD, Year=2012, Genre=Clasical}
+{Category=Books, Format=Ebook, Year=2008, ISBN=978-0132350884, Authors=Robert C. Martin, Genre=Tech, Publisher=Prentice Hall}
+{Category=Books, Format=Audio, Year=2011, ISBN=007-6092046981, Authors=Robert C. Martin, Genre=Tech, Publisher=Prentice Hall}
+«{Category=Books, Format=Paperback, Year=1994, ISBN=978-0201633610, Authors=Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides, Genre=Tech, Publisher=Prentice Hall}
+M{Artist=Elvis Presley, Category=Music, Format=Vinyl, Year=2015, Genre=Rock}
+½{Category=Movies, Format=DVD, Year=1994, Writers=Winston Groom, Eric Roth, Stars=Tom Hanks, Rebecca Williams, Sally Field, Michael Conner Humphreys, Director=Robert Zemeckis, Genre=Drama}
+÷{Category=Movies, Format=Blu-ray, Year=2001, Writers=J.R.R. Tolkien, Fran Walsh, Philippa Boyens, Peter Jackson, Stars=Ron Livingston, Jennifer Aniston, David Herman, Ajay Naidu, Diedrich Bader, Stephen Root, Director=Peter Jackson, Genre=Drama}
+R{Artist=Garth Brooks, Category=Music, Format=Cassette, Year=1990, Genre=Country}
+Ê{Category=Movies, Format=Blu-ray, Year=1999, Writers=William Goldman, Stars=Ron Livingston, Jennifer Aniston, David Herman, Ajay Naidu, Diedrich Bader, Stephen Root, Director=Mike Judge, Genre=Comedy}
+„{Category=Movies, Format=DVD, Year=1987, Writers=William Goldman, Stars=Cary Elwes, Mandy Patinkin, Robin Wright, Chris Sarandon, Christopher Guest, Wallace Shawn, AndrÃƒÂ© the Giant, Fred Savage, Peter Falk, Billy Crystal, Director=Rob Reiner, Genre=Comedy}
+Â{Category=Books, Format=Hardcover, Year=1999, ISBN=978-0201485677, Authors=Martin Fowler, Kent Beck, John Brant, William Opdyke, Don Roberts, Genre=Tech, Publisher=Addison-Wesley Professional}
+J{Artist=Nat King Cole, Category=Music, Format=MP3, Year=2008, Genre=Jaz}
+"count 64 depth 11
+#count 123 depth 13
+$count 74 depth 11
+(U{Artist=Ludwig van Beethoven, Category=Music, Format=CD, Year=2012, Genre=Clasical}
+({Category=Books, Format=Ebook, Year=2008, ISBN=978-0132350884, Authors=Robert C. Martin, Genre=Tech, Publisher=Prentice Hall}
+({Category=Books, Format=Audio, Year=2011, ISBN=007-6092046981, Authors=Robert C. Martin, Genre=Tech, Publisher=Prentice Hall}
+(«{Category=Books, Format=Paperback, Year=1994, ISBN=978-0201633610, Authors=Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides, Genre=Tech, Publisher=Prentice Hall}
+(M{Artist=Elvis Presley, Category=Music, Format=Vinyl, Year=2015, Genre=Rock}
+(½{Category=Movies, Format=DVD, Year=1994, Writers=Winston Groom, Eric Roth, Stars=Tom Hanks, Rebecca Williams, Sally Field, Michael Conner Humphreys, Director=Robert Zemeckis, Genre=Drama}
+(÷{Category=Movies, Format=Blu-ray, Year=2001, Writers=J.R.R. Tolkien, Fran Walsh, Philippa Boyens, Peter Jackson, Stars=Ron Livingston, Jennifer Aniston, David Herman, Ajay Naidu, Diedrich Bader, Stephen Root, Director=Peter Jackson, Genre=Drama}
+(R{Artist=Garth Brooks, Category=Music, Format=Cassette, Year=1990, Genre=Country}
+(Ê{Category=Movies, Format=Blu-ray, Year=1999, Writers=William Goldman, Stars=Ron Livingston, Jennifer Aniston, David Herman, Ajay Naidu, Diedrich Bader, Stephen Root, Director=Mike Judge, Genre=Comedy}
+(„{Category=Movies, Format=DVD, Year=1987, Writers=William Goldman, Stars=Cary Elwes, Mandy Patinkin, Robin Wright, Chris Sarandon, Christopher Guest, Wallace Shawn, AndrÃƒÂ© the Giant, Fred Savage, Peter Falk, Billy Crystal, Director=Rob Reiner, Genre=Comedy}
+(Â{Category=Books, Format=Hardcover, Year=1999, ISBN=978-0201485677, Authors=Martin Fowler, Kent Beck, John Brant, William Opdyke, Don Roberts, Genre=Tech, Publisher=Addison-Wesley Professional}
+(J{Artist=Nat King Cole, Category=Music, Format=MP3, Year=2008, Genre=Jaz}
