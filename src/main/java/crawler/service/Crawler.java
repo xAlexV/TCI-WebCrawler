@@ -8,20 +8,18 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.nodes.Node;
 import org.jsoup.nodes.TextNode;
-import org.jsoup.select.Elements;
 
-import javax.inject.Singleton;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.net.URL;
 import java.util.*;
 
 @Path("crawler")
-@Singleton
+
 public class Crawler {
     private List<String> links;
     public List<CrawlingAction> crawlingActions;
@@ -73,10 +71,20 @@ public class Crawler {
     }
 
     @GET
-    @Path("hi")
-    @Produces(MediaType.TEXT_PLAIN)
-    public String trythis() {
-        return "hi!";
+    @Path("{name}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Item getSpecificItem(@PathParam("name") String name)
+    {
+        return findItem("http://i327618.hera.fhict.nl/", name, 0);
+    }
+
+
+    @GET
+    @Path("{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public CrawlingAction getCrawlingInfo(@PathParam("id") int id)
+    {
+        return getCrawlingInfo(id);
     }
 
     public Map<String, String> documentToMap(Document document){
@@ -217,6 +225,17 @@ public class Crawler {
             if(ca.getId() == ID){
                 return ca;
             }
+        }
+        return null;
+    }
+
+    private CrawlingAction findCrawlingAction(int id)
+    {
+        for (CrawlingAction action : crawlingActions
+             ) {
+            if (action.getId() == id)
+                return action;
+
         }
         return null;
     }
