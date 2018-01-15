@@ -11,6 +11,7 @@ import org.jsoup.nodes.TextNode;
 import org.jsoup.select.Elements;
 
 import javax.inject.Named;
+import javax.inject.Singleton;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -34,7 +35,7 @@ import java.util.*;
  * @author Dmytro Bunin
  * @since 2017-12-05
  */
-@Named
+@Singleton
 @Path("/crawler")
 public class Crawler {
     private List<String> links;
@@ -302,7 +303,9 @@ public class Crawler {
         CrawlingAction crawlingAction = new CrawlingAction(this.crawlingActions.size(), "DFS",
                 this.pagesChecked, (int) ((endTime - startTime) / 1000),
                 this.depth);
+        System.out.println(this.crawlingActions.size());
         this.crawlingActions.add(crawlingAction);
+        System.out.println(this.crawlingActions.size());
         List<Map<String, String>> maps = new ArrayList<>();
         for (Document d : documents) {
             Map<String, String> map = this.documentToMap(d);
@@ -320,6 +323,7 @@ public class Crawler {
      * @return an object of type CrawlingAction
      */
     public CrawlingAction getCrawlerAction(int ID){
+        System.out.println(this.crawlingActions.size());
         for(CrawlingAction ca : this.crawlingActions){
             if(ca.getId() == ID){
                 return ca;

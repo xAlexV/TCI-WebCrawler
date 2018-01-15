@@ -21,6 +21,7 @@
           <element id="library" level="project" name="Gradle: javax.ws.rs:javax.ws.rs-api:2.0.1" />
           <element id="library" level="project" name="Gradle: org.glassfish.jersey.containers:jersey-container-servlet:2.15" />
           <element id="library" level="project" name="Gradle: javax.servlet:javax.servlet-api:3.1.0" />
+          <element id="library" level="project" name="Gradle: com.owlike:genson:1.4" />
           <element id="library" level="project" name="Gradle: org.glassfish.jersey.containers:jersey-container-servlet-core:2.15" />
           <element id="library" level="project" name="Gradle: org.glassfish.jersey.core:jersey-common:2.15" />
           <element id="library" level="project" name="Gradle: org.glassfish.jersey.core:jersey-server:2.15" />
@@ -36,7 +37,6 @@
           <element id="library" level="project" name="Gradle: org.glassfish.hk2.external:aopalliance-repackaged:2.4.0-b06" />
           <element id="library" level="project" name="Gradle: org.javassist:javassist:3.18.1-GA" />
           <element id="library" level="project" name="Gradle: javax.inject:javax.inject:1" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.owlike/genson/1.4/8d6f7ee301653b6a221483663cf1c72a52967c8a/genson-1.4.jar" />
         </element>
       </element>
     </root>
