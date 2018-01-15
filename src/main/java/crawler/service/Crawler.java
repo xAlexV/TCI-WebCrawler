@@ -10,6 +10,7 @@ import org.jsoup.nodes.Node;
 import org.jsoup.nodes.TextNode;
 import org.jsoup.select.Elements;
 
+import javax.inject.Named;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -31,7 +32,8 @@ import java.util.*;
  * @author Dmytro Bunin
  * @since 2017-12-05
  */
-@Path("crawler")
+@Named
+@Path("/crawler")
 public class Crawler {
     private List<String> links;
     public List<CrawlingAction> crawlingActions;
@@ -97,7 +99,7 @@ public class Crawler {
     @GET
     @Path("hello")
     @Produces(MediaType.TEXT_PLAIN)
-    public String returnHi () {
+    public String returnHi() {
         return "Hello, this shit it's not working";
     }
 
@@ -108,7 +110,7 @@ public class Crawler {
      * @throws IOException
      */
     @GET
-    @Path("{name}")
+    @Path("/getname/{name}")
     @Produces(MediaType.APPLICATION_JSON)
     public Item getSpecificItem(@PathParam("name") String name) throws IOException {
         return createActionFindItem("http://i327618.hera.fhict.nl/", name);
@@ -121,7 +123,7 @@ public class Crawler {
      * @return an object of type CrawlingAction
      */
     @GET
-    @Path("{id}")
+    @Path("/getid/{id}")
     @Produces(MediaType.APPLICATION_JSON)
     public CrawlingAction getCrawlingInfo(@PathParam("id") int id)
     {
