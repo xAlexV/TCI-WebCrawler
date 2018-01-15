@@ -1,6 +1,16 @@
 group 'TCI'
 version '1.0'
 
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath "org.jfrog.buildinfo:build-info-extractor-gradle:latest.release"
+    }
+}
+
+apply plugin: "com.jfrog.artifactory"
 apply plugin: 'java'
 apply plugin: 'war'
 
