@@ -18,6 +18,8 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import java.io.IOException;
 import java.net.URL;
+import java.net.URLDecoder;
+import java.net.URLEncoder;
 import java.util.*;
 
 /**
@@ -100,7 +102,7 @@ public class Crawler {
     @Path("hello")
     @Produces(MediaType.TEXT_PLAIN)
     public String returnHi() {
-        return "Hello World!";
+        return "Hello, this it's not working";
     }
 
     /**
@@ -113,7 +115,7 @@ public class Crawler {
     @Path("/getname/{name}")
     @Produces(MediaType.APPLICATION_JSON)
     public Item getSpecificItem(@PathParam("name") String name) throws IOException {
-        return createActionFindItem("http://i327618.hera.fhict.nl/", name);
+        return createActionFindItem("http://i327618.hera.fhict.nl/", URLDecoder.decode(name, "UTF-8"));
     }
 
 
