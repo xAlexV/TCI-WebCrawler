@@ -100,7 +100,7 @@ public class Crawler {
     @Path("hello")
     @Produces(MediaType.TEXT_PLAIN)
     public String returnHi() {
-        return "Hello, this shit it's not working";
+        return "Hello World!";
     }
 
     /**
