@@ -1,7 +1,6 @@
 .idea/workspace.xml.idea/workspace.xml
 .idea\workspace.xml
-.idea/*
-.idea\*
+
 .idea/workspace.xml
 *.war
 
@@ -11,6 +10,4 @@
 
 *.class
 
-*.iml
-*.class
 *.iml

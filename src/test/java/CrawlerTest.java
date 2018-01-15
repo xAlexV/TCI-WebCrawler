@@ -176,11 +176,4 @@ public class CrawlerTest {
         crawler.createActionFindAllDocuments("http://i327618.hera.fhict.nl");
         Assert.assertEquals(crawler.crawlingActions.get(0), crawler.getCrawlerAction(0));
     }
-
-    @Test
-    public void TestCreateCrawlingActionFindAll() throws IOException {
-        int size = crawler.crawlingActions.size();
-        crawler.createActionFindAllDocuments("http://i327618.hera.fhict.nl");
-        Assert.assertEquals(size + 1, crawler.crawlingActions.size());
-    }
 }
