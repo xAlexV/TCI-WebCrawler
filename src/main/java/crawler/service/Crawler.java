@@ -94,6 +94,13 @@ public class Crawler {
         return createActionFindAllDocuments("http://i327618.hera.fhict.nl/");
     }
 
+    @GET
+    @Path("hello")
+    @Produces(MediaType.TEXT_PLAIN)
+    public String returnHi () {
+        return "Hello, this shit it's not working";
+    }
+
     /**
      * This is a GET method that uses the createActionFindItem method and returns the result in a json format
      * @param name the name of the searched item

@@ -3,3 +3,11 @@
 
 .idea/workspace.xml
 *.war
+
+*.bin
+
+*.bin
+
+*.class
+
+*.iml
