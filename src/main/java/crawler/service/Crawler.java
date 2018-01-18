@@ -275,6 +275,7 @@ public class Crawler {
      * @throws IOException
      */
     public Item createActionFindItem(String link, String name) throws IOException {
+        this.links = new ArrayList<>();
         this.depth = 0;
         this.pagesChecked = 0;
         long startTime = System.currentTimeMillis();
@@ -297,6 +298,7 @@ public class Crawler {
     public List<Item> createActionFindAllDocuments(String link) throws IOException {
         this.depth = 0;
         this.pagesChecked = 0;
+        this.links = new ArrayList<>();
         long startTime = System.currentTimeMillis();
         List<Document> documents = this.getAllDocuments(link, 0);
         long endTime = System.currentTimeMillis();
