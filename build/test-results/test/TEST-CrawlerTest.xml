@@ -1,54 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="CrawlerTest" tests="36" skipped="0" failures="0" errors="0" timestamp="2018-01-15T12:20:35" hostname="Alexandrus-MacBook-Pro.local" time="4.119">
+<testsuite name="CrawlerTest" tests="36" skipped="0" failures="0" errors="0" timestamp="2018-01-25T19:33:28" hostname="Alexandrus-MacBook-Pro.local" time="14.884">
   <properties/>
-  <testcase name="testBookFound[Book data]" classname="CrawlerTest" time="0.57"/>
-  <testcase name="testfindMovie[Book data]" classname="CrawlerTest" time="0.239"/>
-  <testcase name="testfindMusic[Book data]" classname="CrawlerTest" time="0.112"/>
-  <testcase name="testfindBook[Book data]" classname="CrawlerTest" time="0.006"/>
-  <testcase name="testCreateCrawlingActionAndFindIt[Book data]" classname="CrawlerTest" time="0.14"/>
-  <testcase name="testgetAllDocumentsFromWebsite[Book data]" classname="CrawlerTest" time="0.123"/>
-  <testcase name="testdocumentToMap_book_from_link[Book data]" classname="CrawlerTest" time="0.006"/>
-  <testcase name="testgetAllDocuments_not_a_url[Book data]" classname="CrawlerTest" time="0.0"/>
-  <testcase name="testcreateActionFindItem[Book data]" classname="CrawlerTest" time="0.328"/>
-  <testcase name="testgetAllDocuments_link_with_links_inside[Book data]" classname="CrawlerTest" time="0.123"/>
+  <testcase name="testBookFound[Book data]" classname="CrawlerTest" time="0.859"/>
+  <testcase name="testfindMovie[Book data]" classname="CrawlerTest" time="0.721"/>
+  <testcase name="testfindMusic[Book data]" classname="CrawlerTest" time="0.697"/>
+  <testcase name="testfindBook[Book data]" classname="CrawlerTest" time="0.037"/>
+  <testcase name="testCreateCrawlingActionAndFindIt[Book data]" classname="CrawlerTest" time="0.706"/>
+  <testcase name="testgetAllDocumentsFromWebsite[Book data]" classname="CrawlerTest" time="0.729"/>
+  <testcase name="testdocumentToMap_book_from_link[Book data]" classname="CrawlerTest" time="0.033"/>
+  <testcase name="testgetAllDocuments_not_a_url[Book data]" classname="CrawlerTest" time="0.001"/>
+  <testcase name="testcreateActionFindItem[Book data]" classname="CrawlerTest" time="0.663"/>
+  <testcase name="testgetAllDocuments_link_with_links_inside[Book data]" classname="CrawlerTest" time="0.68"/>
   <testcase name="testconvertMapWithBookToObject[Book data]" classname="CrawlerTest" time="0.001"/>
-  <testcase name="testgetAllDocuments_not_working_link[Book data]" classname="CrawlerTest" time="0.008"/>
-  <testcase name="testBookFound[Book data]" classname="CrawlerTest" time="0.215"/>
-  <testcase name="testfindMovie[Book data]" classname="CrawlerTest" time="0.135"/>
-  <testcase name="testfindMusic[Book data]" classname="CrawlerTest" time="0.15"/>
-  <testcase name="testfindBook[Book data]" classname="CrawlerTest" time="0.006"/>
-  <testcase name="testCreateCrawlingActionAndFindIt[Book data]" classname="CrawlerTest" time="0.341"/>
-  <testcase name="testgetAllDocumentsFromWebsite[Book data]" classname="CrawlerTest" time="0.145"/>
-  <testcase name="testdocumentToMap_book_from_link[Book data]" classname="CrawlerTest" time="0.005"/>
-  <testcase name="testgetAllDocuments_not_a_url[Book data]" classname="CrawlerTest" time="0.0"/>
-  <testcase name="testcreateActionFindItem[Book data]" classname="CrawlerTest" time="0.093"/>
-  <testcase name="testgetAllDocuments_link_with_links_inside[Book data]" classname="CrawlerTest" time="0.201"/>
-  <testcase name="testconvertMapWithBookToObject[Book data]" classname="CrawlerTest" time="0.001"/>
-  <testcase name="testgetAllDocuments_not_working_link[Book data]" classname="CrawlerTest" time="0.0"/>
-  <testcase name="testBookFound[Book data]" classname="CrawlerTest" time="0.139"/>
-  <testcase name="testfindMovie[Book data]" classname="CrawlerTest" time="0.1"/>
-  <testcase name="testfindMusic[Book data]" classname="CrawlerTest" time="0.378"/>
-  <testcase name="testfindBook[Book data]" classname="CrawlerTest" time="0.004"/>
-  <testcase name="testCreateCrawlingActionAndFindIt[Book data]" classname="CrawlerTest" time="0.105"/>
-  <testcase name="testgetAllDocumentsFromWebsite[Book data]" classname="CrawlerTest" time="0.126"/>
-  <testcase name="testdocumentToMap_book_from_link[Book data]" classname="CrawlerTest" time="0.004"/>
-  <testcase name="testgetAllDocuments_not_a_url[Book data]" classname="CrawlerTest" time="0.0"/>
-  <testcase name="testcreateActionFindItem[Book data]" classname="CrawlerTest" time="0.2"/>
-  <testcase name="testgetAllDocuments_link_with_links_inside[Book data]" classname="CrawlerTest" time="0.108"/>
+  <testcase name="testgetAllDocuments_not_working_link[Book data]" classname="CrawlerTest" time="0.002"/>
+  <testcase name="testBookFound[Book data]" classname="CrawlerTest" time="0.668"/>
+  <testcase name="testfindMovie[Book data]" classname="CrawlerTest" time="0.669"/>
+  <testcase name="testfindMusic[Book data]" classname="CrawlerTest" time="0.77"/>
+  <testcase name="testfindBook[Book data]" classname="CrawlerTest" time="0.035"/>
+  <testcase name="testCreateCrawlingActionAndFindIt[Book data]" classname="CrawlerTest" time="0.696"/>
+  <testcase name="testgetAllDocumentsFromWebsite[Book data]" classname="CrawlerTest" time="0.661"/>
+  <testcase name="testdocumentToMap_book_from_link[Book data]" classname="CrawlerTest" time="0.031"/>
+  <testcase name="testgetAllDocuments_not_a_url[Book data]" classname="CrawlerTest" time="0.001"/>
+  <testcase name="testcreateActionFindItem[Book data]" classname="CrawlerTest" time="0.655"/>
+  <testcase name="testgetAllDocuments_link_with_links_inside[Book data]" classname="CrawlerTest" time="0.674"/>
   <testcase name="testconvertMapWithBookToObject[Book data]" classname="CrawlerTest" time="0.0"/>
   <testcase name="testgetAllDocuments_not_working_link[Book data]" classname="CrawlerTest" time="0.0"/>
-  <system-out><![CDATA[{Artist=Ludwig van Beethoven, Category=Music, Format=CD, Year=2012, Genre=Clasical}
-{Category=Books, Format=Ebook, Year=2008, ISBN=978-0132350884, Authors=Robert C. Martin, Genre=Tech, Publisher=Prentice Hall}
-{Category=Books, Format=Audio, Year=2011, ISBN=007-6092046981, Authors=Robert C. Martin, Genre=Tech, Publisher=Prentice Hall}
-{Category=Books, Format=Paperback, Year=1994, ISBN=978-0201633610, Authors=Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides, Genre=Tech, Publisher=Prentice Hall}
-{Artist=Elvis Presley, Category=Music, Format=Vinyl, Year=2015, Genre=Rock}
-{Category=Movies, Format=DVD, Year=1994, Writers=Winston Groom, Eric Roth, Stars=Tom Hanks, Rebecca Williams, Sally Field, Michael Conner Humphreys, Director=Robert Zemeckis, Genre=Drama}
-{Category=Movies, Format=Blu-ray, Year=2001, Writers=J.R.R. Tolkien, Fran Walsh, Philippa Boyens, Peter Jackson, Stars=Ron Livingston, Jennifer Aniston, David Herman, Ajay Naidu, Diedrich Bader, Stephen Root, Director=Peter Jackson, Genre=Drama}
-{Artist=Garth Brooks, Category=Music, Format=Cassette, Year=1990, Genre=Country}
-{Category=Movies, Format=Blu-ray, Year=1999, Writers=William Goldman, Stars=Ron Livingston, Jennifer Aniston, David Herman, Ajay Naidu, Diedrich Bader, Stephen Root, Director=Mike Judge, Genre=Comedy}
-{Category=Movies, Format=DVD, Year=1987, Writers=William Goldman, Stars=Cary Elwes, Mandy Patinkin, Robin Wright, Chris Sarandon, Christopher Guest, Wallace Shawn, Andr?? the Giant, Fred Savage, Peter Falk, Billy Crystal, Director=Rob Reiner, Genre=Comedy}
-{Category=Books, Format=Hardcover, Year=1999, ISBN=978-0201485677, Authors=Martin Fowler, Kent Beck, John Brant, William Opdyke, Don Roberts, Genre=Tech, Publisher=Addison-Wesley Professional}
-{Artist=Nat King Cole, Category=Music, Format=MP3, Year=2008, Genre=Jaz}
+  <testcase name="testBookFound[Book data]" classname="CrawlerTest" time="0.72"/>
+  <testcase name="testfindMovie[Book data]" classname="CrawlerTest" time="0.671"/>
+  <testcase name="testfindMusic[Book data]" classname="CrawlerTest" time="0.682"/>
+  <testcase name="testfindBook[Book data]" classname="CrawlerTest" time="0.03"/>
+  <testcase name="testCreateCrawlingActionAndFindIt[Book data]" classname="CrawlerTest" time="0.707"/>
+  <testcase name="testgetAllDocumentsFromWebsite[Book data]" classname="CrawlerTest" time="0.692"/>
+  <testcase name="testdocumentToMap_book_from_link[Book data]" classname="CrawlerTest" time="0.032"/>
+  <testcase name="testgetAllDocuments_not_a_url[Book data]" classname="CrawlerTest" time="0.0"/>
+  <testcase name="testcreateActionFindItem[Book data]" classname="CrawlerTest" time="0.678"/>
+  <testcase name="testgetAllDocuments_link_with_links_inside[Book data]" classname="CrawlerTest" time="0.673"/>
+  <testcase name="testconvertMapWithBookToObject[Book data]" classname="CrawlerTest" time="0.001"/>
+  <testcase name="testgetAllDocuments_not_working_link[Book data]" classname="CrawlerTest" time="0.0"/>
+  <system-out><![CDATA[0
+1
+1
 {Artist=Ludwig van Beethoven, Category=Music, Format=CD, Year=2012, Genre=Clasical}
 {Category=Books, Format=Ebook, Year=2008, ISBN=978-0132350884, Authors=Robert C. Martin, Genre=Tech, Publisher=Prentice Hall}
 {Category=Books, Format=Audio, Year=2011, ISBN=007-6092046981, Authors=Robert C. Martin, Genre=Tech, Publisher=Prentice Hall}
@@ -58,9 +49,12 @@
 {Category=Movies, Format=Blu-ray, Year=2001, Writers=J.R.R. Tolkien, Fran Walsh, Philippa Boyens, Peter Jackson, Stars=Ron Livingston, Jennifer Aniston, David Herman, Ajay Naidu, Diedrich Bader, Stephen Root, Director=Peter Jackson, Genre=Drama}
 {Artist=Garth Brooks, Category=Music, Format=Cassette, Year=1990, Genre=Country}
 {Category=Movies, Format=Blu-ray, Year=1999, Writers=William Goldman, Stars=Ron Livingston, Jennifer Aniston, David Herman, Ajay Naidu, Diedrich Bader, Stephen Root, Director=Mike Judge, Genre=Comedy}
-{Category=Movies, Format=DVD, Year=1987, Writers=William Goldman, Stars=Cary Elwes, Mandy Patinkin, Robin Wright, Chris Sarandon, Christopher Guest, Wallace Shawn, Andr?? the Giant, Fred Savage, Peter Falk, Billy Crystal, Director=Rob Reiner, Genre=Comedy}
+{Category=Movies, Format=DVD, Year=1987, Writers=William Goldman, Stars=Cary Elwes, Mandy Patinkin, Robin Wright, Chris Sarandon, Christopher Guest, Wallace Shawn, AndrÃ© the Giant, Fred Savage, Peter Falk, Billy Crystal, Director=Rob Reiner, Genre=Comedy}
 {Category=Books, Format=Hardcover, Year=1999, ISBN=978-0201485677, Authors=Martin Fowler, Kent Beck, John Brant, William Opdyke, Don Roberts, Genre=Tech, Publisher=Addison-Wesley Professional}
 {Artist=Nat King Cole, Category=Music, Format=MP3, Year=2008, Genre=Jaz}
+0
+1
+1
 {Artist=Ludwig van Beethoven, Category=Music, Format=CD, Year=2012, Genre=Clasical}
 {Category=Books, Format=Ebook, Year=2008, ISBN=978-0132350884, Authors=Robert C. Martin, Genre=Tech, Publisher=Prentice Hall}
 {Category=Books, Format=Audio, Year=2011, ISBN=007-6092046981, Authors=Robert C. Martin, Genre=Tech, Publisher=Prentice Hall}
@@ -70,7 +64,22 @@
 {Category=Movies, Format=Blu-ray, Year=2001, Writers=J.R.R. Tolkien, Fran Walsh, Philippa Boyens, Peter Jackson, Stars=Ron Livingston, Jennifer Aniston, David Herman, Ajay Naidu, Diedrich Bader, Stephen Root, Director=Peter Jackson, Genre=Drama}
 {Artist=Garth Brooks, Category=Music, Format=Cassette, Year=1990, Genre=Country}
 {Category=Movies, Format=Blu-ray, Year=1999, Writers=William Goldman, Stars=Ron Livingston, Jennifer Aniston, David Herman, Ajay Naidu, Diedrich Bader, Stephen Root, Director=Mike Judge, Genre=Comedy}
-{Category=Movies, Format=DVD, Year=1987, Writers=William Goldman, Stars=Cary Elwes, Mandy Patinkin, Robin Wright, Chris Sarandon, Christopher Guest, Wallace Shawn, Andr?? the Giant, Fred Savage, Peter Falk, Billy Crystal, Director=Rob Reiner, Genre=Comedy}
+{Category=Movies, Format=DVD, Year=1987, Writers=William Goldman, Stars=Cary Elwes, Mandy Patinkin, Robin Wright, Chris Sarandon, Christopher Guest, Wallace Shawn, AndrÃ© the Giant, Fred Savage, Peter Falk, Billy Crystal, Director=Rob Reiner, Genre=Comedy}
+{Category=Books, Format=Hardcover, Year=1999, ISBN=978-0201485677, Authors=Martin Fowler, Kent Beck, John Brant, William Opdyke, Don Roberts, Genre=Tech, Publisher=Addison-Wesley Professional}
+{Artist=Nat King Cole, Category=Music, Format=MP3, Year=2008, Genre=Jaz}
+0
+1
+1
+{Artist=Ludwig van Beethoven, Category=Music, Format=CD, Year=2012, Genre=Clasical}
+{Category=Books, Format=Ebook, Year=2008, ISBN=978-0132350884, Authors=Robert C. Martin, Genre=Tech, Publisher=Prentice Hall}
+{Category=Books, Format=Audio, Year=2011, ISBN=007-6092046981, Authors=Robert C. Martin, Genre=Tech, Publisher=Prentice Hall}
+{Category=Books, Format=Paperback, Year=1994, ISBN=978-0201633610, Authors=Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides, Genre=Tech, Publisher=Prentice Hall}
+{Artist=Elvis Presley, Category=Music, Format=Vinyl, Year=2015, Genre=Rock}
+{Category=Movies, Format=DVD, Year=1994, Writers=Winston Groom, Eric Roth, Stars=Tom Hanks, Rebecca Williams, Sally Field, Michael Conner Humphreys, Director=Robert Zemeckis, Genre=Drama}
+{Category=Movies, Format=Blu-ray, Year=2001, Writers=J.R.R. Tolkien, Fran Walsh, Philippa Boyens, Peter Jackson, Stars=Ron Livingston, Jennifer Aniston, David Herman, Ajay Naidu, Diedrich Bader, Stephen Root, Director=Peter Jackson, Genre=Drama}
+{Artist=Garth Brooks, Category=Music, Format=Cassette, Year=1990, Genre=Country}
+{Category=Movies, Format=Blu-ray, Year=1999, Writers=William Goldman, Stars=Ron Livingston, Jennifer Aniston, David Herman, Ajay Naidu, Diedrich Bader, Stephen Root, Director=Mike Judge, Genre=Comedy}
+{Category=Movies, Format=DVD, Year=1987, Writers=William Goldman, Stars=Cary Elwes, Mandy Patinkin, Robin Wright, Chris Sarandon, Christopher Guest, Wallace Shawn, AndrÃ© the Giant, Fred Savage, Peter Falk, Billy Crystal, Director=Rob Reiner, Genre=Comedy}
 {Category=Books, Format=Hardcover, Year=1999, ISBN=978-0201485677, Authors=Martin Fowler, Kent Beck, John Brant, William Opdyke, Don Roberts, Genre=Tech, Publisher=Addison-Wesley Professional}
 {Artist=Nat King Cole, Category=Music, Format=MP3, Year=2008, Genre=Jaz}
 ]]></system-out>

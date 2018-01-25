@@ -1,4 +1,6 @@
 import crawler.service.MockitoCrawler;
+import org.junit.runner.RunWith;
+import org.mockito.Mock;
 import org.testng.annotations.Test;
 import java.io.IOException;
 import static org.mockito.Mockito.mock;
@@ -8,6 +10,8 @@ import static org.testng.AssertJUnit.assertFalse;
 import static org.testng.AssertJUnit.assertTrue;
 
 public class MockitoCrawlerTest {
+
+    @Mock
     private MockitoCrawler mockitoCrawler = mock(MockitoCrawler.class);
 
     @Test
@@ -25,7 +29,7 @@ public class MockitoCrawlerTest {
     }
 
     @Test
-    public void mockLink() throws IOException{
+    public void mockFakeLink() throws IOException{
         assertFalse("Item does not exist", mockitoCrawler.itemExists("fontys.nl", "fntys",0));
         when(mockitoCrawler.itemExists("fontys.nl", "fntys",0)).thenReturn(true);
         assertTrue("Item exists",
