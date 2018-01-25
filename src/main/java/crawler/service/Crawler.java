@@ -333,4 +333,11 @@ public class Crawler {
         }
         return null;
     }
+
+
+    public boolean itemExists(String link, String name, int depth) throws IOException{
+        if(findItem(link,name,depth) != null){
+            return true;}
+        else{return false;}
+    }
 }
