@@ -35,5 +35,12 @@ public class Music extends Item {
         }
         return status;
     }
+
+    public boolean sameArtist(String artist){
+        if(artist.equals(getArtist())){
+            return true;
+        }
+        else{return false;}
+    }
 }
 
